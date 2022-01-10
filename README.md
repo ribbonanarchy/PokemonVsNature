@@ -1,6 +1,6 @@
 # PokemonVsNature
 
-Pokemon battles curated based on the weather of a selected day and location. 
+Hello! Party people.
 
 Pokemon API: https://pokeapi.co/
 
