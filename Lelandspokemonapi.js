@@ -4,7 +4,30 @@ var endpoint = [
     'type',
     'move-damage-class',
     'move-category',
-]/*//types of weather
+]
+var weatherTypes = [
+    'clearSky', 
+    'cloudy',
+    'partlyCloudy',
+    'rain',
+    'thunderstorm',
+    'snow',
+    'mist'
+];
+
+var pokemonTypes = [
+    'normal',
+    'fighting',
+    'flying',
+    'poison',
+    'ground',
+    'rock',
+    'bug',
+    'ghost',
+    'steel'
+];
+
+/*//types of weather
 var clearSky
 //cloudy will include scattered clouds and broken clouds
 var cloudy
@@ -17,7 +40,8 @@ var snow
 //this means foggy to me?
 var mist*/
 
-var idOrName = 1//document.getElementById('autocomplete-input').value
+var idOrName = 150//document.getElementById('autocomplete-input').value
+
 //DOM OBJECTS
 var pokeCard = document.querySelector('.pokeCard');
 var pokeName = document.querySelector('.poke-name');
