@@ -14,11 +14,126 @@
     <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
     <title>PokemonVsNature</title>
   </head>
+  
+
   <header>
     <h1>PokemonVsNature</h1>
   </header>
   <body>
-    <script type="text/javascript" src="materialize.min.js"></script>
+    <!-- Autocomplete for the user's location input -->
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="autocomplete-input" class="autocomplete">
+            <label for="autocomplete-input">Choose your location!</label>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="material-icons right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="pokeCard ">
+      <div class="screen_header">
+        <span class="poke-name"></span>
+        <span class="poke-id"></span>
+      </div>
+      <div class="stats__types">
+        <span class="poke-type-one"></span>
+        <!-- placing class -->
+
+        <span class="poke-type-two"></span>
+      </div>
+      <div class ="screen_image">
+        <img src="" class="poke-front-image" alt="front image of pokemon">
+      </div>
+    </div>
+    <!-- style of types with color backgrounds -->
+    <style> 
+      .pokeCard {
+        box-shadow: inset 0 0 3px 3px rgba(0,0,0,.3);
+        border-radius: 15px;
+        height: 100%;
+        width: 200px;
+        padding: 15px;
+      }
+      .hide {
+        display: none;
+      }
+      .normal {
+      background: #BABAAE;
+      }
+    
+      .fighting {
+        background: #A75543;
+      }
+    
+      .flying {
+        background: #78A2FF;
+      }
+    
+      .poison {
+        background: #A95CA0;
+      }
+    
+      .ground {
+        background: #EECC55;
+      }
+    
+      .rock {
+        background: #CCBD72;
+      }
+    
+      .bug {
+        background: #C2D21E;
+      }
+    
+      .ghost {
+        background: #7975D7;
+      }
+    
+      .steel {
+        background: #C4C2DB;
+      }
+    
+      .fire {
+        background: #FA5643;
+      }
+    
+      .water {
+        background: #56ADFF;
+      }
+    
+      .grass {
+        background: #8CD750;
+      }
+    
+      .electric {
+        background: #FDE139;
+      }
+    
+      .psychic {
+        background: #FA65B4;
+      }
+    
+      .ice {
+        background: #96F1FF;
+      }
+    
+      .dragon {
+        background: #8673FF;
+      }
+    
+      .dark {
+        background: #8D6855;
+      }
+    
+      .fairy {
+        background: #F9AEFF;
+      }
+    </style>
+      <script type="text/javascript" src="materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src= "./Lelandspokemonapi.js"></script>
   </body>
