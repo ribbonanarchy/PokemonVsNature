@@ -164,16 +164,16 @@ var pokeFrontImage = document.querySelector('.poke-front-image');
 console.log(pokeName);
 
 //for (i=0; i<idOrName.length; i++) {
-var url = 'https://pokeapi.co/api/v2/' + endpoint[0] + '/' + idOrName + '/' // + "sprites/front_default"
-function getApi() {
-    fetch (url)
+var urlSinglePoke = 'https://pokeapi.co/api/v2/' + endpoint[0] + '/' + idOrName + '/' // + "sprites/front_default"
+function getOnePokemon() {
+    fetch (urlSinglePoke)
     .then(function (response) {
-        console.log('hello this is the response function')
+        console.log('hello this is the response function for urlSinglePoke')
         console.log(response)
         return response.json();
     })
     .then( data => {
-        console.log('hello this is the data function')
+        console.log('hello this is the data function for urlSinglePoke')
         console.log(data);
         
         //shows name of pokemon
@@ -208,4 +208,34 @@ function getApi() {
     })
 }
 //}
-getApi();
+getOnePokemon();
+var urlTypeArray = 'https://pokeapi.co/api/v2/' + endpoint[1] + '/' + pokemonTypes[1].type + '/' // + "sprites/front_default"
+function getOnePokemon() {
+    fetch (urlTypeArray)
+    .then(function (response) {
+        console.log('hello this is the response function for urlTypeArray')
+        console.log(response)
+        return response.json();
+    })
+    .then( data => {
+        console.log('hello this is the data function for urlTypeArray')
+        console.log(data);
+        
+        //shows name of pokemon
+        console.log(data['name']);
+        pokeName.textContent = (data['name'])
+
+        //pokemon types variables
+        var dataTypes = data['types'];
+        var dataFirstType = dataTypes[0];
+        var dataSecondType = dataTypes[1];
+
+        //shows 1st type of pokemon i.e 'grass/water/poison'
+        console.log(dataFirstType['type']['name']);
+        pokeTypeOne.textContent = (dataFirstType)['type']['name'];
+        //creates variables to check if there are more than one type for each pokemon
+        if (dataSecondType) {
+            pokeTypeTwo.classList.remove('hide')
+            pokeTypeTwo.textContent = (dataSecondType)['type']['name'];
+            console.log = (dataSecondType['type']['name']);
+
