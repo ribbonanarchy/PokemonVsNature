@@ -43,57 +43,90 @@ var pokemonPositiveStatus = pokemonDefaultPower+50;
 // console.log("the positive effect is " + pokemonPositiveStatus);
 // console.log("the negative effect is " + pokemonNegativeStatus);
 var weatherTypes = [
-    'clearSky', 
+    'clearSky',//[0] 
     // flying+[2], dragon+[13] , fire+[9], dark-[14], ghost-[7], bug-[6], water-[10]
-    'cloudy',
-    //poison+, dark+, fighting+, normal-
-    'partlyCloudy',
-    //poison+, dark+, fighting+, bug+
-    'rain',
-    //water+, grass+, ground+, rock-, steel-, fire-, poison-
-    'thunderstorm',
-    //electric+, dragon-, flying-, fire-, rock-, normal+
-    'snow',
-    //ground-, normal+, ghost+, rock+, steel+
-    'mist'
-    //fairy+, fighting-, ghost+, bug+, electric-
+    'cloudy',//[1]
+    //poison+[3], dark+[14], fighting+[1], normal-[0]
+    'partlyCloudy', //[2]
+    //poison+[3], dark+[14], fighting+[1], bug+[6]
+    'rain',//[3]
+    //water+[10], grass+[11], ground+[4], rock-[5], steel-[8], fire-[9], poison-[3]
+    'thunderstorm',//[4]
+    //electric+[12], normal+[0], dragon-[13], flying-[2], fire-[9], rock-[5], 
+    'snow',//[5]
+    //normal+[0], ghost+[7], rock+[5], steel+[8], ground-[4], 
+    'mist'//[6]
+    //fairy+[15], ghost+[7], bug+[6], fighting-[1], electric-[12], 
 ];
 //console.log("this is the array of weatherTypes " + weatherTypes)
 //console.log("this is the first Index of weatherTypes " + weatherTypes[0])
 
-var currentWeather = weatherTypes[0];
+var currentWeather = '';
 console.log("the current weather is " + currentWeather)
+//create an equation for the types of weather associated with pokemon Type
 /*I will need to associate each pokemonType with a starting power of 'pokemonDefaultPower'
 then loop through each type of pokemon?
 I will need if statements drawn up for each pokemon type and weathertype*/
 switch (currentWeather) {
-    case weatherTypes[0]: 
+    case weatherTypes[0]:  //clearSky
         pokemonTypes[2].power= pokemonPositiveStatus, 
         pokemonTypes[13].power= pokemonPositiveStatus,
         pokemonTypes[9].power= pokemonPositiveStatus;
-        console.log(pokemonTypes[2].power)
+        pokemonTypes[14].power= pokemonNegativeStatus,
+        pokemonTypes[7].power= pokemonNegativeStatus,
+        pokemonTypes[6].power= pokemonNegativeStatus,
+        pokemonTypes[10].power= pokemonNegativeStatus;
         
     break;
-    case weatherTypes[1]: pokemonTypes[2].power - pokemonNegativeStatus;
+    case weatherTypes[1]:  //cloudy
+        pokemonTypes[3].power= pokemonPositiveStatus, 
+        pokemonTypes[14].power= pokemonPositiveStatus,
+        pokemonTypes[1].power= pokemonPositiveStatus,
+        pokemonTypes[0].power= pokemonNegativeStatus;
     break;
-    case weatherTypes[2]: pokemonTypes[2].power - pokemonNegativeStatus;
+    case weatherTypes[2]: //partlyCloudy
+        pokemonTypes[3].power= pokemonPositiveStatus, 
+        pokemonTypes[14].power= pokemonPositiveStatus,
+        pokemonTypes[1].power= pokemonPositiveStatus,
+        pokemonTypes[6].power= pokemonPositiveStatus;
     break;
-    case weatherTypes[3]: pokemonTypes[2].power - pokemonNegativeStatus;
+    case weatherTypes[3]: //rain
+        pokemonTypes[10].power= pokemonPositiveStatus, 
+        pokemonTypes[11].power= pokemonPositiveStatus,
+        pokemonTypes[4].power= pokemonPositiveStatus,
+        pokemonTypes[5].power= pokemonNegativeStatus,
+        pokemonTypes[8].power= pokemonNegativeStatus,
+        pokemonTypes[9].power= pokemonNegativeStatus,
+        pokemonTypes[3].power= pokemonNegativeStatus;
     break;
-    case weatherTypes[4]: pokemonTypes[2].power - pokemonNegativeStatus;
+    case weatherTypes[4]: //thunderstorm
+        pokemonTypes[12].power= pokemonPositiveStatus,
+        pokemonTypes[0].power= pokemonPositiveStatus,
+        pokemonTypes[13].power= pokemonNegativeStatus,
+        pokemonTypes[2].power= pokemonNegativeStatus,
+        pokemonTypes[9].power= pokemonNegativeStatus,
+        pokemonTypes[5].power= pokemonNegativeStatus;
     break;
-    case weatherTypes[5]: pokemonTypes[2].power - pokemonNegativeStatus;
+    case weatherTypes[5]: //snow
+        pokemonTypes[0].power= pokemonPositiveStatus,
+        pokemonTypes[13].power= pokemonPositiveStatus,
+        pokemonTypes[2].power= pokemonPositiveStatus,
+        pokemonTypes[9].power= pokemonPositiveStatus,
+        pokemonTypes[5].power= pokemonNegativeStatus;
+    case weatherTypes[6]: //mist
+        pokemonTypes[15].power= pokemonPositiveStatus,
+        pokemonTypes[7].power= pokemonPositiveStatus,
+        pokemonTypes[6].power= pokemonPositiveStatus,
+        pokemonTypes[1].power= pokemonNegativeStatus,
+        pokemonTypes[12].power= pokemonNegativeStatus;
     break;
 }
-
-console.log("the pokemon type " + pokemonTypes[0].type + " will have a negative status with " + weatherTypes[1])
-
 
 // var pokemonStatusEffects [
 
 // ]
 
-//create an equation for the types of weather associated with pokemon Type
+
 
 var endpoint = [
     'pokemon', 
