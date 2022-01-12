@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="Assets\Materialize\materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="Assets/battleStyle.css">
     <title>Battleground</title>
 </head>
 <body>
-    
+    <div id="score-container">
+        <div class="score-keeper">
+            <p>Your Wins: <span id="user-wins">0</span></p>
+            <p>Your Losses: <span id="user-losses">0</span></p>
+        </div>
+        <div class="score-keeper">
+            <p>Computer Wins: <span id="comp-wins">0</span></p>
+            <p>Computer Losses: <span id="comp-losses">0</span></p>
+        </div>
+    </div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="Assets/battleScript.js"></script>

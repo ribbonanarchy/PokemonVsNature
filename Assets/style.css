@@ -17,8 +17,15 @@ body {
     font-size: 20px;
 }
 
-#autocomplete-input {
+#location-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#input-field {
     color: black;
+    width: 80%;
 }
 
 #weather-container {
