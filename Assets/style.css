@@ -1,3 +1,4 @@
+
 .body{
     display: flex;
     text-align: center;
@@ -6,6 +7,11 @@
 }
 
 /*robyn*/
+body {
+    background-color: rgb(192, 214, 255);
+    font-family: monospace;
+}
+
 #header {
     display: block;
     margin: auto;
@@ -19,6 +25,7 @@
 #header h2 {
     font-size: 20px;
 }
+
 /*Rob*/
 
 /*container for the weather app*/
@@ -90,6 +97,22 @@
 }
 
 /*Rob*/
+
+
+#autocomplete-input {
+    color: black;
+}
+
+#weather-container {
+    height: 200px;
+    margin: 30px;
+    margin-top: 0px;
+    border: 10px;
+    border: solid;
+    padding: 20px;
+}
+
+
 #poke-container {
     height: 260px;
     margin: 30px;
@@ -97,7 +120,10 @@
     border: solid;
     padding: 20px;
     display: flex;
+
     background-image: url(./images/pokeBackground.jpeg);
+
+
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
@@ -110,10 +136,23 @@
     padding: 10px;
     width: 14%;
 }
+
 /*Rob*/
 
 #poke1,#poke2,#poke3,#poke4,#poke5,#poke6{
     background-color: floralwhite;
 
+}
+
+
+
+#battle-button {
+    background-color: blue;
+    width: 10%;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
 }
 
