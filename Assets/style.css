@@ -5,10 +5,25 @@
     
 }
 
+/*robyn*/
+#header {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 40px;
+}
+
+#header h2 {
+    font-size: 20px;
+}
+/*Rob*/
 
 /*container for the weather app*/
 .location{
-    margin: 100px auto;
+    margin: 100px auto 20px auto;
     background: #ffcb05;
     padding: 2em;
     width: 100%;
@@ -20,7 +35,7 @@
 
 .search{
     display: flex;
-    
+    width: ;
     align-items: center;
     margin: 0.20em;
     border-radius: 10px;
@@ -43,23 +58,62 @@
     background-image: url(./images/backgroundForecast.jpeg);
     background-size:fill;
     background-repeat: no-repeat;
-    background-position: center center;
-    justify-content: space-between;
+    background-position: center 60%;
+    justify-content: space-around;
+}
+
+.days{
+    display: flex;
+    height: 215px;
+    padding: 15px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+
 }
 
 #day1, #day2, #day3, #day4, #day5{
     position: relative;
     display: flex;
     background-color: floralwhite;
-    height: 170px;
-    width: 10%;
+    
+    width: 12%;
     min-width: 160px ;
     box-sizing: border-box;
     object-fit: fill;
     margin: 15px 15px 15px 15px;
     float: left;
-    
     border: 1px solid black;
     border-radius: 8px;
     
+    
+    
 }
+
+/*Rob*/
+#poke-container {
+    height: 260px;
+    margin: 30px;
+    border: 10px;
+    border: solid;
+    padding: 20px;
+    display: flex;
+    background-image: url(./images/pokeBackground.jpeg);
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.poke-card {
+    height: 80%;
+    border: 10px;
+    border: solid;
+    padding: 10px;
+    width: 14%;
+}
+/*Rob*/
+
+#poke1,#poke2,#poke3,#poke4,#poke5,#poke6{
+    background-color: floralwhite;
+
+}
+
