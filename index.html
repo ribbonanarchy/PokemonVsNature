@@ -1,53 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="Assets\Materialize\materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="Assets/style.css">
+
     <title>Pokemon Weather</title>
 </head>
+
 <body>
-    <!-- Header with title and description -->
+
+    <!-- Header with title and description Robyn -->
     <div id="header">
         <h1>Pokemon Vs. Nature</h1>
-        <h2>Pick a location and a date within the next 5 days to determine the conditions of your Pokemon battle! Once we have your location and time, you will be
-             presented with Pokemon options to choose your champion.</h2>
+        <h2>Pick a location and a date within the next 5 days to determine the conditions of your Pokemon battle! Once
+            we have your location and time, you will be
+            presented with Pokemon options to choose your champion.</h2>
     </div>
 
-    <!-- Autocomplete for the user's location input -->
-    <div class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <input type="text" id="autocomplete-input" class="autocomplete">
-              <label for="autocomplete-input">Choose your location!</label>
+    <div class="location">
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="citySearch" placeholder="Place or country...">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-    <!-- Weather card for the 5-day forecast -->
-    <div id="weather-container"></div>
+    <div class="forecast">
+        <div class="days">
+            <div id="day1">
 
-    <!-- Pokemon option card -->
+            </div>
+            <div id="day2">
+
+            </div>
+            <div id="day3">
+
+            </div>
+            <div id="day4">
+
+            </div>
+            <div id="day5">
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pokemon option card Robyn -->
     <div id="poke-container">
-        <div class="card poke-card" id="poke1"></div>
-        <div class="card poke-card" id="poke2"></div>
-        <div class="card poke-card" id="poke3"></div>
-        <div class="card poke-card" id="poke4"></div>
-        <div class="card poke-card" id="poke5"></div>
-        <div class="card poke-card" id="poke6"></div>
+        <div class="pokeCardContainer"></div>
+          <div class="card poke-card" id="poke1"></div>
+          <div class="card poke-card" id="poke2"></div>
+          <div class="card poke-card" id="poke3"></div>
+          <div class="card poke-card" id="poke4"></div>
+          <div class="card poke-card" id="poke5"></div>
+          <div class="card poke-card" id="poke6"></div>
+        </div>
     </div>
 
-    <!-- Let's Battle Button (takes you to the other page) -->
-    <div id="button-container">
-        <a class="waves-effect waves-light btn-large" id="battle-button">Let's Battle!</a>
-    </div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="Assets/script.js"></script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="Assets/script.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="Assets/script.js"></script>
+
 </body>
+
 </html>

@@ -1,3 +1,12 @@
+
+.body{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+}
+
+/*robyn*/
 body {
     background-color: rgb(192, 214, 255);
     font-family: monospace;
@@ -17,6 +26,79 @@ body {
     font-size: 20px;
 }
 
+/*Rob*/
+
+/*container for the weather app*/
+.location{
+    margin: 100px auto 20px auto;
+    background: #ffcb05;
+    padding: 2em;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    /*font*/
+}
+
+.search{
+    display: flex;
+    width: ;
+    align-items: center;
+    margin: 0.20em;
+    border-radius: 10px;
+}
+
+.citySearch{
+    height: 30px;
+}
+
+.searchButton{
+    height: 36px;
+}
+
+.forecast{
+    position: relative;
+    margin: 10px auto;
+    border: 2px solid black;
+    height: 315px;
+    border-radius: 10px;
+    background-image: url(./images/backgroundForecast.jpeg);
+    background-size:fill;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    justify-content: space-around;
+}
+
+.days{
+    display: flex;
+    height: 215px;
+    padding: 15px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+
+}
+
+#day1, #day2, #day3, #day4, #day5{
+    position: relative;
+    display: flex;
+    background-color: floralwhite;
+    
+    width: 12%;
+    min-width: 160px ;
+    box-sizing: border-box;
+    object-fit: fill;
+    margin: 15px 15px 15px 15px;
+    float: left;
+    border: 1px solid black;
+    border-radius: 8px;
+    
+    
+    
+}
+
+/*Rob*/
+
+
 #autocomplete-input {
     color: black;
 }
@@ -30,6 +112,7 @@ body {
     padding: 20px;
 }
 
+
 #poke-container {
     height: 260px;
     margin: 30px;
@@ -37,6 +120,10 @@ body {
     border: solid;
     padding: 20px;
     display: flex;
+
+    background-image: url(./images/pokeBackground.jpeg);
+
+
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
@@ -50,6 +137,15 @@ body {
     width: 14%;
 }
 
+/*Rob*/
+
+#poke1,#poke2,#poke3,#poke4,#poke5,#poke6{
+    background-color: floralwhite;
+
+}
+
+
+
 #battle-button {
     background-color: blue;
     width: 10%;
@@ -59,3 +155,4 @@ body {
     display: flex;
     justify-content: center;
 }
+
