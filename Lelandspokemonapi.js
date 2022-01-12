@@ -68,9 +68,9 @@ then loop through each type of pokemon?
 I will need if statements drawn up for each pokemon type and weathertype*/
 switch (currentWeather) {
     case weatherTypes[0]: 
-        pokemonTypes[2].power + pokemonPositiveStatus, 
-        pokemonTypes[13].power + pokemonPositiveStatus,
-        pokemonTypes[9].power + pokemonPositiveStatus;
+        pokemonTypes[2].power= pokemonPositiveStatus, 
+        pokemonTypes[13].power= pokemonPositiveStatus,
+        pokemonTypes[9].power= pokemonPositiveStatus;
         console.log(pokemonTypes[2].power)
         
     break;
