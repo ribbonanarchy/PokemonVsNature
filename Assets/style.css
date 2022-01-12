@@ -1,0 +1,65 @@
+.body{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+/*container for the weather app*/
+.location{
+    margin: 100px auto;
+    background: #ffcb05;
+    padding: 2em;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    /*font*/
+}
+
+.search{
+    display: flex;
+    
+    align-items: center;
+    margin: 0.20em;
+    border-radius: 10px;
+}
+
+.citySearch{
+    height: 30px;
+}
+
+.searchButton{
+    height: 36px;
+}
+
+.forecast{
+    position: relative;
+    margin: 10px auto;
+    border: 2px solid black;
+    height: 315px;
+    border-radius: 10px;
+    background-image: url(./images/backgroundForecast.jpeg);
+    background-size:fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+    justify-content: space-between;
+}
+
+#day1, #day2, #day3, #day4, #day5{
+    position: relative;
+    display: flex;
+    background-color: floralwhite;
+    height: 170px;
+    width: 10%;
+    min-width: 160px ;
+    box-sizing: border-box;
+    object-fit: fill;
+    margin: 15px 15px 15px 15px;
+    float: left;
+    
+    border: 1px solid black;
+    border-radius: 8px;
+    
+}
