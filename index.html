@@ -36,38 +36,47 @@
 
     <div class="forecast">
         <div class="days">
+            <button id="day0card">
             <div id="day1">
                 <p id="fDate0"></p>
                 <p id="fImg0"></p>
                 <p>Temp:<span id="fTemp0"></span></p>
                 <p>Humidity:<span id="fHumidity0"></span></p>
             </div>
+            </button>
+            <button id="day1card">
             <div id="day2">
                 <p id="fDate1"></p>
                 <p id="fImg1"></p>
                 <p>Temp:<span id="fTemp1"></span></p>
                 <p>Humidity:<span id="fHumidity1"></span></p>
             </div>
+            </button>
+            <button id="day2card">
             <div id="day3">
                 <p id="fDate2"></p>
                 <p id="fImg2"></p>
                 <p>Temp:<span id="fTemp2"></span></p>
                 <p>Humidity:<span id="fHumidity2"></span></p>
             </div>
+            </button>
+            <button id="day3card">
             <div id="day4">
                 <p id="fDate3"></p>
                 <p id="fImg3"></p>
                 <p>Temp:<span id="fTemp3"></span></p>
                 <p>Humidity:<span id="fHumidity3"></span></p>
             </div>
+            </button>
+            <button id="day4card">
             <div id="day5">
                 <p id="fDate4"></p>
                 <p id="fImg4"></p>
                 <p>Temp:<span id="fTemp4"></span></p>
                 <p>Humidity:<span id="fHumidity4"></span></p>
             </div>
+            </button>
         </div>
-
     </div>
 
     <!-- Pokemon option card Robyn -->
@@ -82,19 +91,11 @@
         </div>
     </div>
 
-    <audio id="audio" autoplay controls>
-        <source src="./Assets/audio/Pokemon_Theme.mp3" type="audio/mpeg">Your browser does not support the audio element.
-    </audio>
 
-    <script type="text/javascript">
-        function autoplay(){
-            var r =confirm("Would You Like To AutoPlay Music?");
-            if (r == true) {
-                document.getElementById("audio").play();
-            }
-          }
-        </script>
-        <script>autoplay();</script>
+
+    <audio id="player" autoplay loop>
+        <source src="./Assets/audio/Pokemon_Theme.mp3" type="audio/mp3">
+    </audio>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
