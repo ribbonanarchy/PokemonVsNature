@@ -1,7 +1,9 @@
+
+
 html, body {
     background-image: url(images/backgroundForecast.jpeg);
     
-}
+} 
 
 body{
     display: flex;
@@ -64,8 +66,8 @@ body{
     padding: 10px;
     
 }
-
-.citySearch{
+ 
+#autocomplete-input{
     font-family: pokeFont;
     height: 30px;
     width: 280px;
@@ -77,16 +79,27 @@ body{
     
 
     
-}
+} 
 
 .searchButton{
     height: 55px;
     width: 55px;
     border: lightslategray;
     border-radius: 100px;
-    margin-top: 18px;
+    margin-top: -14px;
     font-size: 24px;
     float: right;
     box-shadow: 8px 8px rgba(0, 0, 0, 0.2);
     
+} 
+
+#currentWeatherCard{
+    background-color: transparent;
+    border-radius: 60px;
+}
+
+
+
+.forecastCard.a .forecastCard.img .forcastCard.span{
+    opacity: 100%;
 }

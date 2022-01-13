@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" href="Assets/Materialize/materialize.min.css">
     <link rel="stylesheet" href="Assets/style.css">
-    
+
+
     <title>Document</title>
 </head>
 
@@ -28,22 +29,111 @@
         <div class="cloud3">
             <!-- former d class location and wrap-->
             <div id="cloud3Search">
-              <div class="wrap">
-                 <p>Press Enter</p>
-                 <input type="text" class="citySearch" placeholder="Enter location...">
-                 <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                 </button>
-              </div>
+                <div id="wrap">
+                    <p>Press Enter</p>
+                    <form id="city-form">
+                        <label for="autocomplete-input"></label>
+                        <input type="text" id="autocomplete-input" class="autocomplete" class="citySearch"
+                            placeholder="Enter location...">
+
+                        <button id="searchBtn" type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                    </form>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- <div id='currentWeatherCard' class="row right-align hide">
+            <div class="col s12 m6">
+                <div class="card transparent darken-1 todayForecastCard">
+                    <img id="iconImg" class="card.small left">
+                    <div id="icon"></div>
+                    <div class="card-content white-text">
+                        <span id="cityTitleCard" class="card-title"></span>
+                        <p id="date"></p>
+                        <p id="temp"></p>
+                        MUST POPULATE THE HUMIDITY FOR CURRENT WEATHER -->
+        <!-- <p id="humidity"></p>
+                        <p id="windSpeed"></p>
+                        <p id="uvi"></p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="fiveDayForecast">
+            <div class='row col.m2 forecastRow'>
+                <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+                    <span id="cityTitleCard" class="card-title"></span>
+                    <p id="date0"></p>
+                    <img id="iconImg0">
+                    <p id="temp0"></p>
+                    <p id="humidity0"></p>
+                    <p id="windSpeed0"></p>
+                    <p id="uvi0"></p>
+                </div>
+                <div class='row col.m2 forecastRow'>
+                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+                        <span id="cityTitleCard" class="card-title"></span>
+                        <p id="date1"></p>
+                        <img id="iconImg1">
+                        <p id="temp1"></p>
+                        <p id="humidity1"></p>
+                        <p id="windSpeed1"></p>
+                        <p id="uvi1"></p>
+                    </div>
+                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+                        <span id="cityTitleCard" class="card-title"></span>
+                        <p id="date2"></p>
+                        <img id="iconImg2">
+                        <p id="temp2"></p>
+                        <p id="humidity2"></p>
+                        <p id="windSpeed2"></p>
+                        <p id="uvi2"></p>
+                    </div>
+                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+                        <span id="cityTitleCard" class="card-title"></span>
+                        <p id="date3"></p>
+                        <img id="iconImg3">
+                        <p id="temp3"></p>
+                        <p id="humidity3"></p>
+                        <p id="windSpeed3"></p>
+                        <p id="uvi3"></p>
+                    </div>
+                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+                        <span id="cityTitleCard" class="card-title"></span>
+                        <p id="date4"></p>
+                        <img id="iconImg4">
+                        <p id="temp4"></p>
+                        <p id="humidity4"></p>
+                        <p id="windSpeed4"></p>
+                        <p id="uvi4"></p>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
 
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-</script>
- <script src="Assets/script.js"></script>
+
+
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+            </script>
+        <script src="Assets/Materialize/materialize.min.js"></script>
+        <script src="Assets/script.js"></script>
 
 </body>
 
