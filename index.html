@@ -26,8 +26,8 @@
     <div class="location">
         <div class="wrap">
             <div class="search">
-                <input type="text" class="citySearch" placeholder="Place or country...">
-                <button type="submit" class="searchButton">
+                <input type="text" class="citySearch" id="search-city" placeholder="Place or country...">
+                <button type="submit" class="searchButton" id="search-button">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
@@ -40,35 +40,30 @@
                 <p id="fDate0"></p>
                 <p id="fImg0"></p>
                 <p>Temp:<span id="fTemp0"></span></p>
-                <p>Wind:<span id="fWind0"></span></p>
                 <p>Humidity:<span id="fHumidity0"></span></p>
             </div>
             <div id="day2">
                 <p id="fDate1"></p>
                 <p id="fImg1"></p>
                 <p>Temp:<span id="fTemp1"></span></p>
-                <p>Wind:<span id="fWind1"></span></p>
                 <p>Humidity:<span id="fHumidity1"></span></p>
             </div>
             <div id="day3">
                 <p id="fDate2"></p>
                 <p id="fImg2"></p>
                 <p>Temp:<span id="fTemp2"></span></p>
-                <p>Wind:<span id="fWind2"></span></p>
                 <p>Humidity:<span id="fHumidity2"></span></p>
             </div>
             <div id="day4">
                 <p id="fDate3"></p>
-                <p id="fImm3"></p>
+                <p id="fImg3"></p>
                 <p>Temp:<span id="fTemp3"></span></p>
-                <p>Wind:<span id="fWind3"></span></p>
                 <p>Humidity:<span id="fHumidity3"></span></p>
             </div>
             <div id="day5">
                 <p id="fDate4"></p>
                 <p id="fImg4"></p>
                 <p>Temp:<span id="fTemp4"></span></p>
-                <p>Wind:<span id="fWind4"></span></p>
                 <p>Humidity:<span id="fHumidity4"></span></p>
             </div>
         </div>
@@ -87,9 +82,19 @@
         </div>
     </div>
 
+    <audio id="audio" autoplay controls>
+        <source src="./Assets/audio/Pokemon_Theme.mp3" type="audio/mpeg">Your browser does not support the audio element.
+    </audio>
 
-
-
+    <script type="text/javascript">
+        function autoplay(){
+            var r =confirm("Would You Like To AutoPlay Music?");
+            if (r == true) {
+                document.getElementById("audio").play();
+            }
+          }
+        </script>
+        <script>autoplay();</script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

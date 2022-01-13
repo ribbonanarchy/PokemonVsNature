@@ -27,9 +27,10 @@ var APIKey="a0aca8a89948154a4182dcecc780b513";
 
 // Display the curent and future weather to the user after grabing the city form the input text box.
 function displayWeather(event){
+  console.log("displayWeather");
     event.preventDefault();
-    if(citySearch.val().trim()!==""){
-        city=citySearch.val().trim();
+    if(searchCity.val().trim()!==""){
+        city=searchCity.val().trim();
         currentWeather(city);
     }
 }
@@ -114,13 +115,15 @@ function forecast(cityid){
       method:"GET"
   }).then(function(response){
 
-    for (i=0;i<5;i++) {
-      var date= new Date((response.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
-      var iconcode= response.list[((i+1)*8)-1].weather[0].icon;
-      var iconurl="https://openweathermap.org/img/wn/"+iconcode+".png";
-      var tempK= response.list[((i+1)*8)-1].main.temp;
-      var tempF=(((tempK-273.5)*1.80)+32).toFixed(2);
-      var humidity= response.list[((i+1)*8)-1].main.humidity;
+      for (i=0;i<5;i++){
+        var date= new Date((response.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
+        console.log(date);
+        var iconcode= response.list[((i+1)*8)-1].weather[0].icon;
+        var iconurl="https://openweathermap.org/img/wn/"+iconcode+".png";
+        var tempK= response.list[((i+1)*8)-1].main.temp;
+        var tempF=Math.round(((tempK-273.5)*1.80)+32);
+        console.log(tempF);
+        var humidity= response.list[((i+1)*8)-1].main.humidity;
 
       $("#fDate"+i).html(date);
       $("#fImg"+i).html("<img src="+iconurl+">");
@@ -174,3 +177,6 @@ $("#search-button").on("click",displayWeather);
 $(document).on("click",invokePastSearch);
 $(window).on("load",loadlastCity);
 $("#clear-history").on("click",clearHistory);
+
+var audio = document.getElementById("myAudio");
+  audio.play();

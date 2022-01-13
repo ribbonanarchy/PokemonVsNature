@@ -1,11 +1,3 @@
-
-.body{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    
-}
-
 /*robyn*/
 body {
     background-color: rgb(192, 214, 255);
@@ -70,19 +62,19 @@ body {
 }
 
 .days{
+    width: 65%;
     display: flex;
     height: 215px;
     padding: 15px;
     justify-content: space-evenly;
     margin-top: 20px;
-
 }
 
 #day1, #day2, #day3, #day4, #day5{
     position: relative;
     display: flex;
+    flex-direction: column;
     background-color: floralwhite;
-    
     width: 12%;
     min-width: 160px ;
     box-sizing: border-box;
@@ -91,9 +83,10 @@ body {
     float: left;
     border: 1px solid black;
     border-radius: 8px;
-    
-    
-    
+}
+
+#day1 p, #day2 p, #day3 p, #day4 p, #day5 p {
+    margin: 0;
 }
 
 /*Rob*/
@@ -155,4 +148,3 @@ body {
     display: flex;
     justify-content: center;
 }
-
