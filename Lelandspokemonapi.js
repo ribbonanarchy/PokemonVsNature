@@ -1,38 +1,86 @@
 //var url = 'https://pokeapi.co/api/v2/' + endpoint +'/' + idOrName
 var pokemonTypes = [
-    {type: 'normal', //0
-    power: 100},
-    {type: 'fighting', //1
-    Power: 100},
-    {type: 'flying', //2
-    power: 100}, 
-    {type: 'poison', //3
-    power: 100},
-    {type: 'ground', //4
-    power: 100},
-    {type: 'rock', //5
-    power: 100},
-    {type: 'bug', //6
-    power: 100},
-    {type: 'ghost', //7
-    power: 100},
-    {type: 'steel', //8
-    power: 100},
-    {type: 'fire', //9
-    Power: 100},
-    {type: 'water', //10
-    Power: 100},
-    {type: 'grass', //11
-    Power: 100},
-    {type: 'electric', //12
-    power: 100},
-    {type: 'dragon', //13
-    Power: 100},
-    {type: 'dark', //14
-    Power: 100},
-    {type: 'fairy', //15
-    Power: 100},
+    {type: 'normal',
+    power: 100,
+    id: 1,
+    pokemonArray: ['']},
+    {type: 'fighting',
+    Power: 100,
+    id: 2,
+    pokemonArray: ['']},
+    {type: 'flying',
+    power: 100,
+    id: 3,
+    pokemonArray: ['']}, 
+    {type: 'poison',
+    power: 100,
+    id: 4,
+    pokemonArray: ['']},
+    {type: 'ground',
+    power: 100,
+    id: 5,
+    pokemonArray: ['']},
+    {type: 'rock',
+    power: 100,
+    id: 6,
+    pokemonArray: ['']},
+    {type: 'bug',
+    power: 100,
+    id: 7,
+    pokemonArray: ['']},
+    {type: 'ghost',
+    power: 100,
+    id: 8,
+    pokemonArray: ['']},
+    {type: 'steel',
+    power: 100,
+    id: 9,
+    pokemonArray: ['']},
+    {type: 'fire', 
+    power: 100,
+    id: 10,
+    pokemonArray: ['']},
+    {type: 'water', 
+    power: 100,
+    id: 11,
+    pokemonArray: ['']},
+    {type: 'grass', 
+    power: 100,
+    id: 12,
+    pokemonArray: ['']},
+    {type: 'electric',
+    power: 100,
+    id: 13,
+    pokemonArray: ['']},
+    {type: 'psychic',
+    power: 100,
+    id: 14,
+    pokemonArray: ['']},
+    {type: 'ice',
+    power: 100,
+    id: 15,
+    pokemonArray: ['']},
+    {type: 'dragon',
+    power: 100,
+    id: 16,
+    pokemonArray: ['']}
 ];
+
+// populate arrays for each type
+for(var i=0; i<pokemonTypes.length; i++) {
+    fetch('https://pokeapi.co/api/v2/type/' + pokemonTypes[i].id + '/')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        for(var j=0; j<10; j++) {
+            pokemonTypes[i].pokemonArray[j] = data.pokemon[j];
+        }
+        console.log(pokemonTypes[i].pokemonArray);
+    })
+}
+
 // for (i=0; i<pokemonTypes.length; i++) {
 // console.log("the pokemon type array is " + pokemonTypes[i].type);
 // };
@@ -43,25 +91,45 @@ var pokemonPositiveStatus = pokemonDefaultPower+50;
 // console.log("the positive effect is " + pokemonPositiveStatus);
 // console.log("the negative effect is " + pokemonNegativeStatus);
 var weatherTypes = [
-    'clearSky',//[0] 
-    // flying+[2], dragon+[13] , fire+[9], dark-[14], ghost-[7], bug-[6], water-[10]
-    'cloudy',//[1]
-    //poison+[3], dark+[14], fighting+[1], normal-[0]
-    'partlyCloudy', //[2]
+    {type: 'clearSky',//[0] 
+    positiveIndex: [2,13,9],
+    negativeIndex: [14,7,6,10]
+    // flying+[2], dragon+[13] , fire+[9], dark-[14], ghost-[7], bug-[6], water-[10] 
+    },
+    {type: 'cloudy',//[1]
+    positiveIndex: [3,14,1],
+    negativeIndex: [0]
+    //poison+[3], dark+[14], fighting+[1], normal-[0] 
+    },
+    {type: 'partlyCloudy', //[2]
+    positiveIndex: [3,14,1,6]
     //poison+[3], dark+[14], fighting+[1], bug+[6]
-    'rain',//[3]
+    },
+    {type: 'rain',//[3]
+    positiveIndex: [10,11,4],
+    negativeIndex: [5,8,9,3]
     //water+[10], grass+[11], ground+[4], rock-[5], steel-[8], fire-[9], poison-[3]
-    'thunderstorm',//[4]
+    },
+    {type: 'thunderstorm',//[4]
+    positiveIndex: [12,0],
+    negativeIndex: [13,2,9,5]
     //electric+[12], normal+[0], dragon-[13], flying-[2], fire-[9], rock-[5], 
-    'snow',//[5]
+    },
+    {type: 'snow',//[5]
+    positiveIndex: [0,7,5,8],
+    negativeIndex: [4]
     //normal+[0], ghost+[7], rock+[5], steel+[8], ground-[4], 
-    'mist'//[6]
+    },
+    {type: 'mist',//[6]
+    positiveIndex: [15,7,6],
+    negativeIndex: [1,12]
     //fairy+[15], ghost+[7], bug+[6], fighting-[1], electric-[12], 
+    },
 ];
 //console.log("this is the array of weatherTypes " + weatherTypes)
 //console.log("this is the first Index of weatherTypes " + weatherTypes[0])
 
-var currentWeather = '';
+var currentWeather = 'thunderstorm';
 console.log("the current weather is " + currentWeather)
 //create an equation for the types of weather associated with pokemon Type
 /*I will need to associate each pokemonType with a starting power of 'pokemonDefaultPower'
@@ -122,34 +190,12 @@ switch (currentWeather) {
     break;
 }
 
-// var pokemonStatusEffects [
-
-// ]
-
-
-
 var endpoint = [
     'pokemon', 
     'type',
     'move-damage-class',
     'move-category',
 ]
-
-
-
-
-/*//types of weather
-var clearSky
-//cloudy will include scattered clouds and broken clouds
-var cloudy
-//partly Cloudy will include few clouds
-var partlyCloudy
-//rain will include shower rain
-var rain
-var thunderstorm
-var snow
-//this means foggy to me?
-var mist*/
 
 var idOrName = 150//document.getElementById('autocomplete-input').value
 
@@ -164,78 +210,102 @@ var pokeFrontImage = document.querySelector('.poke-front-image');
 console.log(pokeName);
 
 //for (i=0; i<idOrName.length; i++) {
-var urlSinglePoke = 'https://pokeapi.co/api/v2/' + endpoint[0] + '/' + idOrName + '/' // + "sprites/front_default"
-function getOnePokemon() {
-    fetch (urlSinglePoke)
-    .then(function (response) {
-        console.log('hello this is the response function for urlSinglePoke')
-        console.log(response)
-        return response.json();
-    })
-    .then( data => {
-        console.log('hello this is the data function for urlSinglePoke')
-        console.log(data);
+// var urlSinglePoke = 'https://pokeapi.co/api/v2/' + endpoint[0] + '/' + idOrName + '/' // + "sprites/front_default"
+// function getOnePokemon() {
+//     fetch (urlSinglePoke)
+//     .then(function (response) {
+//         console.log('hello this is the response function for urlSinglePoke')
+//         console.log(response)
+//         return response.json();
+//     })
+//     .then( data => {
+//         console.log('hello this is the data function for urlSinglePoke')
+//         console.log(data);
+        
+//         //shows name of pokemon
+//         console.log(data['name']);
+//         pokeName.textContent = (data['name'])
+
+//         //pokemon types variables
+//         var dataTypes = data['types'];
+//         var dataFirstType = dataTypes[0];
+//         var dataSecondType = dataTypes[1];
+
+//         //shows 1st type of pokemon i.e 'grass/water/poison'
+//         console.log(dataFirstType['type']['name']);
+//         pokeTypeOne.textContent = (dataFirstType)['type']['name'];
+//         //creates variables to check if there are more than one type for each pokemon
+//         if (dataSecondType) {
+//             pokeTypeTwo.classList.remove('hide')
+//             pokeTypeTwo.textContent = (dataSecondType)['type']['name'];
+//             console.log = (dataSecondType['type']['name']);
+
+//         } else {
+//             pokeTypeTwo.classList.add('hide');
+//             pokeTypeTwo.textContent = '';
+//             //empty string to display nothing
+//             console.log = ("this pokemon has no second type");
+//         }
+
+//         //images for pokemon
+//         pokeFrontImage.src = data['sprites']['front_default'];
+//         //display the color for the type of pokemon!!
+//         pokeCard.classList.add((dataFirstType)['type']['name']);
+//     })
+// }
+// //}
+// getOnePokemon();
+
+
+
+// var urlTypeArray = 'https://pokeapi.co/api/v2/type/1/'
+// function getPokeByType() {
+//     fetch (urlTypeArray)
+//     .then(function (response) {
+//         console.log('hello this is the response function for urlTypeArray: ' + response);
+//         return response.json();
+//     })
+//     .then( data => {
+//         console.log('hello this is the data function for urlTypeArray');
+//         console.log(data);
         
         //shows name of pokemon
-        console.log(data['name']);
-        pokeName.textContent = (data['name'])
+        // console.log(data.pokemon_species);
 
-        //pokemon types variables
-        var dataTypes = data['types'];
-        var dataFirstType = dataTypes[0];
-        var dataSecondType = dataTypes[1];
+        // console.log(data.pokemon_species)
+        // console.log(data.types);
 
-        //shows 1st type of pokemon i.e 'grass/water/poison'
-        console.log(dataFirstType['type']['name']);
-        pokeTypeOne.textContent = (dataFirstType)['type']['name'];
-        //creates variables to check if there are more than one type for each pokemon
-        if (dataSecondType) {
-            pokeTypeTwo.classList.remove('hide')
-            pokeTypeTwo.textContent = (dataSecondType)['type']['name'];
-            console.log = (dataSecondType['type']['name']);
+        // var gen1Pokemon = data.types;
 
-        } else {
-            pokeTypeTwo.classList.add('hide');
-            pokeTypeTwo.textContent = '';
-            //empty string to display nothing
-            console.log = ("this pokemon has no second type");
-        }
 
-        //images for pokemon
-        pokeFrontImage.src = data['sprites']['front_default'];
-        //display the color for the type of pokemon!!
-        pokeCard.classList.add((dataFirstType)['type']['name']);
-    })
-}
-//}
-getOnePokemon();
-var urlTypeArray = 'https://pokeapi.co/api/v2/' + endpoint[1] + '/' + pokemonTypes[1].type + '/' // + "sprites/front_default"
-function getOnePokemon() {
-    fetch (urlTypeArray)
-    .then(function (response) {
-        console.log('hello this is the response function for urlTypeArray')
-        console.log(response)
-        return response.json();
-    })
-    .then( data => {
-        console.log('hello this is the data function for urlTypeArray')
-        console.log(data);
         
-        //shows name of pokemon
-        console.log(data['name']);
-        pokeName.textContent = (data['name'])
+        // for(var i=0; i<gen1Pokemon.length; i++) {
+        //     // console.log(gen1Pokemon[i].url);
+        //     fetch(gen1Pokemon[i].url)
+        //     .then(function(response) {
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        // } 
 
         //pokemon types variables
-        var dataTypes = data['types'];
-        var dataFirstType = dataTypes[0];
-        var dataSecondType = dataTypes[1];
+        // var dataTypes = data['types'];
+        // var dataFirstType = dataTypes[0];
+        // var dataSecondType = dataTypes[1];
 
-        //shows 1st type of pokemon i.e 'grass/water/poison'
-        console.log(dataFirstType['type']['name']);
-        pokeTypeOne.textContent = (dataFirstType)['type']['name'];
-        //creates variables to check if there are more than one type for each pokemon
-        if (dataSecondType) {
-            pokeTypeTwo.classList.remove('hide')
-            pokeTypeTwo.textContent = (dataSecondType)['type']['name'];
-            console.log = (dataSecondType['type']['name']);
+//     })
+// }
+
+// getPokeByType();
+
+        // //shows 1st type of pokemon i.e 'grass/water/poison'
+        // console.log(dataFirstType['type']['name']);
+        // pokeTypeOne.textContent = (dataFirstType)['type']['name'];
+        // //creates variables to check if there are more than one type for each pokemon
+        // if (dataSecondType) {
+        //     pokeTypeTwo.classList.remove('hide')
+        //     pokeTypeTwo.textContent = (dataSecondType)['type']['name'];
+        //     console.log = (dataSecondType['type']['name']);
 
