@@ -1,0 +1,169 @@
+
+
+body, html {
+    background-image: url(./backgroundForecast.jpeg);
+    background-repeat: no-repeat;
+    /* display: flex; */
+    /* background-size:cover ; */
+    
+    
+    
+} 
+
+body{
+    display: flex;
+}
+
+
+@font-face {
+    font-family: "pokeFont";
+    src: url('./PokemonGb-RAeo.ttf');
+}
+
+#header {
+    text-align: center;
+    font-family: pokeFont;
+  
+    
+    /* flex-direction: column; */
+    
+}
+
+.cloud{ 
+    width:325px;
+    height:130px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+    margin-left: 90px;
+    padding: 3px;
+    float: left;
+}
+ 
+.cloud h1{
+     font-size: 30px;
+     line-height: 1.5;
+     margin: 18px;
+     text-shadow: 2px 2px rgb(42, 117, 187,0.7);
+     
+}
+ 
+.cloud2{
+    width:515px;
+    height:130px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+    float: left;
+    margin: 25px;
+    margin-top: 50px;
+    /* margin-top: 20px;
+    margin-left: 80px; */
+    padding: 24px;
+    text-align: center;
+}
+ 
+.cloud2 p{
+     line-height: 1.4;
+     margin-top: -2px;
+     
+     text-shadow: 2px 2px rgb(255, 203, 5, 0.5);
+}
+
+.cloud3{
+    width:330px;
+    height:120px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius:100px;
+    /* position: relative; */
+    /* top: 12px;
+    right: 5; */
+    padding: 15px;
+    /* margin-left: 15px; */
+    text-align: center;
+    font-family: pokeFont;
+    float: right;
+}
+
+/* #city-form{
+    
+} */
+
+#autocomplete-input{
+    
+    font-family: pokeFont;
+    height: 44px;
+    width: 290px;
+    
+    border-radius: 100px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px rgb(255, 203, 5, 0.8);
+    text-indent: 20px;
+    padding: 14px 12px -6px -6px;  
+} 
+
+#wrap p{
+    font-size:20px;
+    text-shadow: 2px 2px rgb(255, 203, 5, 0.8);
+    margin-bottom: 8px;
+}
+
+.searchButton{
+    height: 55px;
+    width: 55px;
+    border: lightslategray;
+    border-radius: 100px;
+    margin-top: -4px;
+    font-size: 24px;
+    float: right;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+} 
+
+.searchButton:hover {
+    background-color: #e7e7e7;
+}
+
+.searchButton:focus{
+    background-color: rgb(255, 203, 5, 0.9);
+}
+
+#currentWeatherCard{
+    background-color: transparent;
+    border-radius: 60px;
+}
+.forecastCard {
+    opacity: 100%;
+    background-color: #79c9fa;
+}
+
+.waves-effect{
+    background-color: #79c9fa; 
+    border-radius: 100px;
+
+}
+
+.waves-effect:focus{
+    background-color: rgb(255, 203, 5, 0.9);
+}
+
+.waves-effect:hover {
+    background-color: rgb(255, 203, 5, 0.9);
+}
+
+#pokeRow{
+    background: transparent;
+}
+
+/* div .pokeCard{
+    height: 150px;
+    margin-left: 60px;
+    justify-content: space-evenly;
+} */
+
+
+
+/* }   .fiveDayForecast{
+    display: flex; */
+
+    /* justify-content: flex-end; */
