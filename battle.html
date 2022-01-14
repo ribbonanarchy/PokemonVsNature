@@ -9,8 +9,31 @@
     <title>Battleground</title>
 </head>
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="Assets/battleScript.js"></script>
+
+    <header>
+        <h1>PokeBattle</h1>
+        <h2>Now that you have chosen your champion, the computer will do the same. It's time to battle!</h2>
+    </header>
+
+    <aside>
+        <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+            <span id="cityTitleCard" class="card-title">Bryan, TX</span>
+            <p id="date1">(1/14/22</p>
+            <img id="iconImg1">
+            <p id="temp1">56 degrees F</p>
+            <p id ="humidity1">Humidity: 75%</p>
+            <p id="windSpeed1">Wind Speed: 7 mph</p>
+            <p id="uvi1"></p>
+        </div>
+    </aside>
+
+    <audio id="player" autoplay loop>
+        <source src="./Assets/audio/Pokemon_Battle.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="Assets/battleScript.js"></script>
+
 </body>
 </html>

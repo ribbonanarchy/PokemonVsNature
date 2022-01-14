@@ -1,5 +1,22 @@
-* {
+body {
     background-image: url("./images/arena.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
+}
+
+@font-face {
+    font-family: PokeGB;
+    src: url(./PokemonGb-RAeo.ttf);
+}
+header {
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+    font-family: PokeGb;
+    padding: .2rem;
+}
+
+aside {
+    float: left;
+    color: white;
 }
