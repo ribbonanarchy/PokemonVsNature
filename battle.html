@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" href="Assets/battleStyle.css">
     <title>Battleground</title>
 </head>
+
 <body>
 
     <header>
@@ -15,22 +17,23 @@
             <h1>PokeBattle</h1>
         </div>
         <div class="cloud2">
-            <p>Now that you have chosen your champion, the computer will do the same. It's time to battle!</p>
+            Now that you have chosen your champion, the computer will do the same. It's time to battle!
         </div>
     </header>
 
-    <aside>
+    <!-- <aside>
         <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
             <span id="cityTitleCard" class="card-title">Bryan, TX</span>
             <p id="date1">(1/14/22</p>
             <img id="iconImg1">
-            <p id="temp1">56 degrees F</p>
+            <p id="temp1">Temperature: 56 degrees F</p>
             <p id ="humidity1">Humidity: 75%</p>
             <p id="windSpeed1">Wind Speed: 7 mph</p>
             <p id="uvi1"></p>
         </div>
-    </aside>
+    </aside> -->
 
+    <div class="scoreContainer">
         <div class=results-you>You:
             <span class="result-score" data-your-score>0</span>
         </div>
@@ -38,48 +41,54 @@
         <div class="results-comp">Computer:
             <span class="result-score" data-computer-score>0</span>
         </div>
+    </div>
 
-    <section class="userChoice">
-        <div class="screen__image">
-            <img src="" class="poke-front-image" alt="front">
-            <img src="" class="poke-back-image" alt="back">
-        </div>
-        <div class="screen__description">
-            <div class="stats__types">
-                <span class="poke-type-one">Type 1: </span>
-                <span class="poke-type-two">Type 2: </span>
+    <div class="pokeContainer">
+        <section class="userChoice">
+            <div class="screen__image">
+                <img src="" class="poke-front-image" alt="front">
+                <img src="" class="poke-back-image" alt="back">
             </div>
-            <div class="screen__stats">
-                <p class="stats__weight">Weight: <span class="poke-weight"></span></p>
-                <p class="stats__height">Height: <span class="poke-height"></span></p>
+            <div class="screen__description">
+                <div class="stats__types">
+                    <span class="poke-type-one">Type 1: </span>
+                    <span class="poke-type-two">Type 2: </span>
+                </div>
+                <div class="screen__stats">
+                    <p class="stats__weight">Weight: <span class="poke-weight"></span></p>
+                    <p class="stats__height">Height: <span class="poke-height"></span></p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="compChoice">
-        <div class="screen__image">
-            <img src="" class="poke-front-image" alt="front">
-            <img src="" class="poke-back-image" alt="back">
-        </div>
-        <div class="screen__description">
-            <div class="stats__types">
-                <span class="poke-type-one">Type 1: </span>
-                <span class="poke-type-two">Type 2: </span>
+        <section class="compChoice">
+            <div class="screen__image">
+                <img src="" class="poke-front-image" alt="front">
+                <img src="" class="poke-back-image" alt="back">
             </div>
-            <div class="screen__stats">
-                <p class="stats__weight">Weight: <span class="poke-weight"></span></p>
-                <p class="stats__height">Height: <span class="poke-height"></span></p>
+            <div class="screen__description">
+                <div class="stats__types">
+                    <span class="poke-type-one">Type 1: </span>
+                    <span class="poke-type-two">Type 2: </span>
+                </div>
+                <div class="screen__stats">
+                    <p class="stats__weight">Weight: <span class="poke-weight"></span></p>
+                    <p class="stats__height">Height: <span class="poke-height"></span></p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
 
     <audio id="player" autoplay loop>
         <source src="./Assets/audio/Pokemon_Battle.mp3" type="audio/mp3">
     </audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="Assets/battleScript.js"></script>
 
 </body>
+
 </html>
