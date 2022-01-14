@@ -3,83 +3,90 @@ var pokemonTypes = [
     {type: 'normal',
     power: 100,
     id: 1,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'fighting',
     Power: 100,
     id: 2,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'flying',
     power: 100,
     id: 3,
-    pokemonArray: ['']}, 
+    pokemonArray: ['0']}, 
     {type: 'poison',
     power: 100,
     id: 4,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'ground',
     power: 100,
     id: 5,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'rock',
     power: 100,
     id: 6,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'bug',
     power: 100,
     id: 7,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'ghost',
     power: 100,
     id: 8,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'steel',
     power: 100,
     id: 9,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'fire', 
     power: 100,
     id: 10,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'water', 
     power: 100,
     id: 11,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'grass', 
     power: 100,
     id: 12,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'electric',
     power: 100,
     id: 13,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'psychic',
     power: 100,
     id: 14,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'ice',
     power: 100,
     id: 15,
-    pokemonArray: ['']},
+    pokemonArray: ['0']},
     {type: 'dragon',
     power: 100,
     id: 16,
-    pokemonArray: ['']}
+    pokemonArray: ['0']}
 ];
+
+console.log(pokemonTypes[4].pokemonArray);
+var pokeArray;
 
 // populate arrays for each type
 for(var i=0; i<pokemonTypes.length; i++) {
+   getTypeAPI(i);
+}
+
+function getTypeAPI(i) {
     fetch('https://pokeapi.co/api/v2/type/' + pokemonTypes[i].id + '/')
     .then(function(response) {
         return response.json();
     })
     .then(data => {
-        console.log(data);
-        for(var j=0; j<10; j++) {
-            pokemonTypes[i].pokemonArray[j] = data.pokemon[j];
-        }
-        console.log(pokemonTypes[i].pokemonArray);
+        pokeArray = data.pokemon;
+        console.log(pokeArray.slice(0,10));
+        return pokeArray.slice(0,10);
     })
 }
+
+console.log(pokemonTypes[4].pokemonArray);
 
 // for (i=0; i<pokemonTypes.length; i++) {
 // console.log("the pokemon type array is " + pokemonTypes[i].type);
