@@ -71,7 +71,43 @@ function getForecastUvi (lat,lon) {
                 var uviForecast = data.daily[i].uvi;
                 $('#uvi' + i).text(uviForecast + " UVI index");
             //var forecast = [];
-            }
+          
+        }
+        $('#day0Card').click(function() {
+          console.log("hello this is the day0Card")
+          console.log(this + " is the element i just clicked");
+          console.log(data.daily[0].weather[0].main);
+          $(".pokeCard").removeClass("hide");
+          var day0Weather = data.daily[0].weather[0].main;
+        })
+        $('#day1Card').click(function() {
+          console.log("hello this is the day1Card")
+          console.log(this + " is the element i just clicked");
+          console.log(data.daily[1].weather[0].main);
+          $(".pokeCard").removeClass("hide");
+          var day1Weather = data.daily[1].weather[0].main;
+        })
+        $('#day2Card').click(function() {
+          console.log("hello this is the day2Card")
+          console.log(this + " is the element i just clicked");
+          console.log(data.daily[2].weather[0].main);
+          $(".pokeCard").removeClass("hide");
+          var day2Weather = data.daily[2].weather[0].main;
+        })
+        $('#day3Card').click(function() {
+          console.log("hello this is the day3Card")
+          console.log(this + " is the element i just clicked");
+          console.log(data.daily[3].weather[0].main);
+          $(".pokeCard").removeClass("hide");
+          var day3Weather = data.daily[3].weather[0].main;
+        })
+        $('#day4Card').click(function() {
+          console.log("hello this is the day4Card")
+          console.log(this + " is the element i just clicked");
+          console.log(data.daily[4].weather[0].main);
+          $(".pokeCard").removeClass("hide");
+          var day4Weather = data.daily[4].weather[0].main;
+        })
         })
 }
 function cityListPopulate () {
@@ -99,6 +135,8 @@ $('#city-form').submit(function (event) {
     cityListPopulate();
     getCityWeather();
 })
+
+
 
 
 

@@ -26,6 +26,8 @@
                 your pokémon's chances of becoming a CHAMPION!
             </p>
         </div>
+
+
         <div class="cloud3">
             <!-- former d class location and wrap-->
             <div id="cloud3Search">
@@ -38,6 +40,7 @@
 
                         <button id="searchBtn" type="submit" class="searchButton">
                             <i class="fa fa-search"></i>
+
                     </form>
 
                     </button>
@@ -66,9 +69,12 @@
                 </div>
             </div>
         </div> -->
-        <div class="fiveDayForecast">
-            <div class='row col.m2 forecastRow'>
-                <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
+
+
+
+        <div class="fiveDayForecast container card-stacked">
+            <div class='row col.m3 forecastRow'>
+                <div id="day0Card" class="col s2 forecastCard card card-content white-text hide">
                     <span id="cityTitleCard" class="card-title"></span>
                     <p id="date0"></p>
                     <img id="iconImg0">
@@ -77,47 +83,226 @@
                     <p id="windSpeed0"></p>
                     <p id="uvi0"></p>
                 </div>
-                <div class='row col.m2 forecastRow'>
-                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
-                        <span id="cityTitleCard" class="card-title"></span>
-                        <p id="date1"></p>
-                        <img id="iconImg1">
-                        <p id="temp1"></p>
-                        <p id="humidity1"></p>
-                        <p id="windSpeed1"></p>
-                        <p id="uvi1"></p>
-                    </div>
-                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
-                        <span id="cityTitleCard" class="card-title"></span>
-                        <p id="date2"></p>
-                        <img id="iconImg2">
-                        <p id="temp2"></p>
-                        <p id="humidity2"></p>
-                        <p id="windSpeed2"></p>
-                        <p id="uvi2"></p>
-                    </div>
-                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
-                        <span id="cityTitleCard" class="card-title"></span>
-                        <p id="date3"></p>
-                        <img id="iconImg3">
-                        <p id="temp3"></p>
-                        <p id="humidity3"></p>
-                        <p id="windSpeed3"></p>
-                        <p id="uvi3"></p>
-                    </div>
-                    <div class="col s2 forecastCard card blue-grey darken-1 card-content white-text hide">
-                        <span id="cityTitleCard" class="card-title"></span>
-                        <p id="date4"></p>
-                        <img id="iconImg4">
-                        <p id="temp4"></p>
-                        <p id="humidity4"></p>
-                        <p id="windSpeed4"></p>
-                        <p id="uvi4"></p>
-                    </div>
 
+                <div id="day1Card" class="col s2 forecastCard card  card-content white-text hide">
+                    <span id="cityTitleCard" class="card-title"></span>
+                    <p id="date1"></p>
+                    <img id="iconImg1">
+                    <p id="temp1"></p>
+                    <p id="humidity1"></p>
+                    <p id="windSpeed1"></p>
+                    <p id="uvi1"></p>
                 </div>
+                <div id="day2Card" class="col s2 forecastCard card  card-content white-text hide">
+                    <span id="cityTitleCard" class="card-title"></span>
+                    <p id="date2"></p>
+                    <img id="iconImg2">
+                    <p id="temp2"></p>
+                    <p id="humidity2"></p>
+                    <p id="windSpeed2"></p>
+                    <p id="uvi2"></p>
+                </div>
+                <div id="day3Card" class="col s2 forecastCard card card-content white-text hide">
+                    <span id="cityTitleCard" class="card-title"></span>
+                    <p id="date3"></p>
+                    <img id="iconImg3">
+                    <p id="temp3"></p>
+                    <p id="humidity3"></p>
+                    <p id="windSpeed3"></p>
+                    <p id="uvi3"></p>
+                </div>
+                <div id="day4Card" class="col s2 forecastCard card  card-content white-text hide">
+                    <span id="cityTitleCard" class="card-title"></span>
+                    <p id="date4"></p>
+                    <img id="iconImg4">
+                    <p id="temp4"></p>
+                    <p id="humidity4"></p>
+                    <p id="windSpeed4"></p>
+                    <p id="uvi4"></p>
+                </div>
+
             </div>
         </div>
+    </div>
+
+    <div class="pokeCard hide"> 
+        <div class="screen_header">
+            <span class="poke-name"></span>
+            <span class="poke-id"></span>
+        </div>
+        <div class="stats__types">
+            <span class="poke-type-one"></span>
+            <!-- placing class -->
+
+            <span class="poke-type-two"></span>
+        </div>
+        <div class="screen_image">
+            <img src="" class="poke-front-image" alt="front image of pokemon">
+        </div>
+    </div>
+    <div class="pokeCard hide">
+        <div class="screen_header">
+            <span class="poke-name"></span>
+            <span class="poke-id"></span>
+        </div>
+        <div class="stats__types">
+            <span class="poke-type-one"></span>
+            <!-- placing class -->
+
+            <span class="poke-type-two"></span>
+        </div>
+        <div class="screen_image">
+            <img src="" class="poke-front-image" alt="front image of pokemon">
+        </div>
+    </div>
+    <div class="pokeCard hide">
+        <div class="screen_header">
+            <span class="poke-name"></span>
+            <span class="poke-id"></span>
+        </div>
+        <div class="stats__types">
+            <span class="poke-type-one"></span>
+            <!-- placing class -->
+
+            <span class="poke-type-two"></span>
+        </div>
+        <div class="screen_image">
+            <img src="" class="poke-front-image" alt="front image of pokemon">
+        </div>
+    </div>
+    <div class="pokeCard hide">
+        <div class="screen_header">
+            <span class="poke-name"></span>
+            <span class="poke-id"></span>
+        </div>
+        <div class="stats__types">
+            <span class="poke-type-one"></span>
+            <!-- placing class -->
+
+            <span class="poke-type-two"></span>
+        </div>
+        <div class="screen_image">
+            <img src="" class="poke-front-image" alt="front image of pokemon">
+        </div>
+    </div>
+    <div class="pokeCard hide">
+        <div class="screen_header">
+            <span class="poke-name"></span>
+            <span class="poke-id"></span>
+        </div>
+        <div class="stats__types">
+            <span class="poke-type-one"></span>
+            <!-- placing class -->
+
+            <span class="poke-type-two"></span>
+        </div>
+        <div class="screen_image">
+            <img src="" class="poke-front-image" alt="front image of pokemon">
+        </div>
+    </div>
+    <div class="pokeCard hide">
+        <div class="screen_header">
+            <span class="poke-name"></span>
+            <span class="poke-id"></span>
+        </div>
+        <div class="stats__types">
+            <span class="poke-type-one"></span>
+            <!-- placing class -->
+
+            <span class="poke-type-two"></span>
+        </div>
+        <div class="screen_image">
+            <img src="" class="poke-front-image" alt="front image of pokemon">
+        </div>
+    </div>
+    <!-- style of types with color backgrounds -->
+    <style>
+        .pokeCard {
+            box-shadow: inset 0 0 3px 3px rgba(0, 0, 0, .3);
+            border-radius: 15px;
+            height: 100%;
+            width: 200px;
+            padding: 15px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .normal {
+            background: #BABAAE;
+        }
+
+        .fighting {
+            background: #A75543;
+        }
+
+        .flying {
+            background: #78A2FF;
+        }
+
+        .poison {
+            background: #A95CA0;
+        }
+
+        .ground {
+            background: #EECC55;
+        }
+
+        .rock {
+            background: #CCBD72;
+        }
+
+        .bug {
+            background: #C2D21E;
+        }
+
+        .ghost {
+            background: #7975D7;
+        }
+
+        .steel {
+            background: #C4C2DB;
+        }
+
+        .fire {
+            background: #FA5643;
+        }
+
+        .water {
+            background: #56ADFF;
+        }
+
+        .grass {
+            background: #8CD750;
+        }
+
+        .electric {
+            background: #FDE139;
+        }
+
+        .psychic {
+            background: #FA65B4;
+        }
+
+        .ice {
+            background: #96F1FF;
+        }
+
+        .dragon {
+            background: #8673FF;
+        }
+
+        .dark {
+            background: #8D6855;
+        }
+
+        .fairy {
+            background: #F9AEFF;
+        }
+    </style>
+
+    <a class="waves-effect waves-light btn-large"><i class="material-icons right"></i>Let's Battle</a>
 
 
 
@@ -128,12 +313,13 @@
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-            </script>
-        <script src="Assets/Materialize/materialize.min.js"></script>
-        <script src="Assets/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+    <script src="Assets/Materialize/materialize.min.js"></script>
+    <script src="Assets/script.js"></script>
 
 </body>
 
