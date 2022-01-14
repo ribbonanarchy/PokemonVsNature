@@ -3,121 +3,140 @@ var pokemonTypes = [
     {type: 'normal',
     power: 100,
     id: 1,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'fighting',
     Power: 100,
     id: 2,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'flying',
     power: 100,
     id: 3,
-    pokemonArray: ['0']}, 
+    pokemonArray: []}, 
     {type: 'poison',
     power: 100,
     id: 4,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'ground',
     power: 100,
     id: 5,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'rock',
     power: 100,
     id: 6,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'bug',
     power: 100,
     id: 7,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'ghost',
     power: 100,
     id: 8,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'steel',
     power: 100,
     id: 9,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'fire', 
     power: 100,
     id: 10,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'water', 
     power: 100,
     id: 11,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'grass', 
     power: 100,
     id: 12,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'electric',
     power: 100,
     id: 13,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'psychic',
     power: 100,
     id: 14,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'ice',
     power: 100,
     id: 15,
-    pokemonArray: ['0']},
+    pokemonArray: []},
     {type: 'dragon',
     power: 100,
     id: 16,
-    pokemonArray: ['0']}
+    pokemonArray: []}
 ];
 
 var weatherTypes = [
     {type: 'clearSky',//[0] 
     positiveIndex: [2,13,9],
-    negativeIndex: [14,7,6,10]
+    negativeIndex: [14,7,6,10],
+    masterArray: []
     // flying+[2], dragon+[13] , fire+[9], dark-[14], ghost-[7], bug-[6], water-[10] 
     },
     {type: 'cloudy',//[1]
     positiveIndex: [3,14,1],
-    negativeIndex: [0]
+    negativeIndex: [0],
+    masterArray: []
     //poison+[3], dark+[14], fighting+[1], normal-[0] 
     },
     {type: 'partlyCloudy', //[2]
-    positiveIndex: [3,14,1,6]
-    //poison+[3], dark+[14], fighting+[1], bug+[6]
+    positiveIndex: [3,14,1,6],
+    negativeIndex: [0],
+    masterArray: []
+    //poison+[3], dark+[14], fighting+[1], bug+[6], normal-[0]
     },
     {type: 'rain',//[3]
     positiveIndex: [10,11,4],
-    negativeIndex: [5,8,9,3]
+    negativeIndex: [5,8,9,3],
+    masterArray: []
     //water+[10], grass+[11], ground+[4], rock-[5], steel-[8], fire-[9], poison-[3]
     },
     {type: 'thunderstorm',//[4]
     positiveIndex: [12,0],
-    negativeIndex: [13,2,9,5]
+    negativeIndex: [13,2,9,5],
+    masterArray: []
     //electric+[12], normal+[0], dragon-[13], flying-[2], fire-[9], rock-[5], 
     },
     {type: 'snow',//[5]
     positiveIndex: [0,7,5,8],
-    negativeIndex: [4]
+    negativeIndex: [4],
+    masterArray: []
     //normal+[0], ghost+[7], rock+[5], steel+[8], ground-[4], 
     },
     {type: 'mist',//[6]
     positiveIndex: [15,7,6],
-    negativeIndex: [1,12]
+    negativeIndex: [1,12],
+    masterArray: []
     //fairy+[15], ghost+[7], bug+[6], fighting-[1], electric-[12], 
     },
 ];
 
-console.log(pokemonTypes[4].pokemonArray);
+// console.log(pokemonTypes[4].pokemonArray);
 var pokeArray;
-var typeMasterArray; //hold all the pokemon affected by current weather
-var userPokeChoice; //pick 6 random from typeMasterArray
+var typeMasterArray = []; //hold all the pokemon affected by current weather
+var userPokeChoice = []; //pick 6 random from typeMasterArray
 var currentPlus, currentNegative, currentWeatherIndex;
+
 var currentWeather = 'thunderstorm';
+var currentType = 'electric';
+
 console.log("the current weather is " + currentWeather);
 
 // populate arrays for each type
-for(var i=0; i<pokemonTypes.length; i++) {
-   pokemonTypes[i].pokemonArray = getTypeAPI(i, currentWeather);
-}
+// for(var i=0; i<pokemonTypes.length; i++) {
+//    pokemonTypes[i].pokemonArray = getTypeAPI(currentType, currentWeather);
+// }
 
-function getTypeAPI(i, currentWeather) {
-    fetch('https://pokeapi.co/api/v2/type/' + pokemonTypes[i].id + '/')
+var currentWeatherIndex, currentTypeIndex;
+currentWeatherIndex = weatherTypes.findIndex(weather => weather.type === currentWeather);
+currentTypeIndex = pokemonTypes.findIndex(type => type.type === currentType);
+console.log("Weather: " + currentWeather + ", Index: " + currentWeatherIndex);
+console.log("Type: " + currentType + ", Index: " + currentTypeIndex);
+
+getTypeAPI(currentTypeIndex, currentWeatherIndex);
+
+function getTypeAPI(currentTypeIndex, currentWeatherIndex) {
+    fetch('https://pokeapi.co/api/v2/type/' + pokemonTypes[currentTypeIndex].id + '/')
     .then(function(response) {
         return response.json();
     })
@@ -126,16 +145,22 @@ function getTypeAPI(i, currentWeather) {
         return pokeArray;
     })
     .then(function(pokeArray) {
-        pokemonTypes[i].pokemonArray = pokeArray;
-        console.log('Here are ten ' + pokemonTypes[i].type + ' pokemon: ');
-        console.log(pokemonTypes[i].pokemonArray);
+        pokemonTypes[currentTypeIndex].pokemonArray = pokeArray;
+        console.log('Here are ten ' + pokemonTypes[currentTypeIndex].type + ' pokemon: ');
+        console.log(pokemonTypes[currentTypeIndex].pokemonArray);
         return pokemonTypes;
     })
     .then(function(pokemonTypes) {
-        currentWeatherIndex = weatherTypes.findIndex(weather => weather.type === currentWeather);
         currentPlus = weatherTypes[currentWeatherIndex].positiveIndex;
         currentNegative = weatherTypes[currentWeatherIndex].negativeIndex;
-        
+        return currentWeatherIndex;
+    })
+    .then(function(currentWeatherIndex) {
+        for(var i=0; i<currentPlus.length; i++) {
+            weatherTypes[currentWeatherIndex].masterArray = weatherTypes[currentWeatherIndex].masterArray.concat(pokemonTypes[currentPlus[i]].pokemonArray);
+        }
+        console.log(weatherTypes[currentWeatherIndex].masterArray);
+        return;
     });
 }
 
