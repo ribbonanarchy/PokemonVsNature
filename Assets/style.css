@@ -2,8 +2,9 @@
 
 body, html {
     background-image: url(images/backgroundForecast.jpeg);
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     /* display: flex; */
+    /* background-size:cover ; */
     
     
     
@@ -162,9 +163,22 @@ body{
     background-color: rgb(255, 203, 5, 0.9);
 }
 
+.waves-effect:hover {
+    background-color: rgb(255, 203, 5, 0.9);
+}
+
 #pokeRow{
     background: transparent;
 }
+
+/* div .pokeCard{
+    height: 150px;
+    margin-left: 60px;
+    justify-content: space-evenly;
+} */
+
+
+
 /* }   .fiveDayForecast{
     display: flex; */
 

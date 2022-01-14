@@ -1,0 +1,42 @@
+body {
+    background-image: url("./images/arenaBattlePage.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+@font-face {
+    font-family: PokeGB;
+    src: url(./PokemonGb-RAeo.ttf);
+}
+header {
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+    font-family: PokeGB;
+    padding: .2rem;
+}
+
+.results-you .results-comp {
+    background-color: lightgray;
+    color: black;
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+}
+
+section {
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+    background-color: lightgray;
+    color: black;
+    font-family: PokeGB;
+}
+
+aside {
+    float: left;
+    background-color: lightgray;
+    color: black;
+    font-family: PokeGB;
+    margin: 1.5%;
+}

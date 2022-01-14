@@ -11,6 +11,7 @@ var cityName = '';
 var latitude = '';
 var longitude = '';
 var recentSearches = [];
+var battlePage = 'battle.html';
 //var requestUrl = "api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=79ae4c44176953beec1155138bc60d35";
 // redirectUrl =
 function getCityWeather() {
@@ -134,6 +135,15 @@ $('#city-form').submit(function (event) {
     console.log('hello this is the submit button function');
     cityListPopulate();
     getCityWeather();
+})
+
+$('#pokeRow').click(function(){
+  $('#battleButton').removeClass('hide');
+  console.log(this,'this is clicked');
+})
+
+$('#battleButton').click(function(){
+  $(document.location.replace(battlePage))
 })
 
 
