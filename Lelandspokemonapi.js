@@ -68,11 +68,12 @@ var pokemonTypes = [
 
 console.log(pokemonTypes[4].pokemonArray);
 var pokeArray;
+var typeMasterArray; //hold all the pokemon affected by current weather
+var userPokeChoice; //pick 6 random from typeMasterArray
 
 // populate arrays for each type
 for(var i=0; i<pokemonTypes.length; i++) {
    pokemonTypes[i].pokemonArray = getTypeAPI(i);
-   console.log(pokemonTypes[i].pokemonArray);
 }
 
 function getTypeAPI(i) {

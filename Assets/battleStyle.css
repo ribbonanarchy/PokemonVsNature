@@ -1,0 +1,23 @@
+body {
+    background-color: darkseagreen;
+    font-family: monospace;
+}
+
+#score-container {
+    display: flex;
+    justify-content: space-around;
+    border: 10px;
+    border: solid;
+    margin: 10px;
+    height: 150px;
+}
+
+.score-keeper {
+    border: 10px;
+    border: solid;
+    margin: 10px;
+    padding: 10px;
+    width: 10%;
+    display: block;
+}
+

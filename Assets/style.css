@@ -101,6 +101,7 @@ body {
 
 #autocomplete-input {
     color: black;
+    width: 80%;
 }
 
 #weather-container {
