@@ -6,14 +6,14 @@ body {
 }
 
 @font-face {
-    font-family: PokeGB;
+    font-family: pokeFont;
     src: url(./PokemonGb-RAeo.ttf);
 }
 header {
     width: 100%;
     text-align: center;
     color: black;
-    font-family: PokeGB;
+    font-family: pokeFont;
     padding: .2rem;
 }
 
@@ -37,14 +37,14 @@ header {
     text-shadow: 2px 2px rgb(42, 117, 187,0.7);
 }
 
-.cloud2{
+.cloud2 {
     justify-content: center;
-    align-content:center
-    width:960px;
-    height:90px;
-    background:#ECEFF1;
+    align-content: center
+    width: 960px;
+    height: 90px;
+    background: #ECEFF1;
     box-shadow: 10px 10px rgba(0,0,0,0.2);
-    border-radius:100px;
+    border-radius: 100px;
     margin: 90px;
     padding: 3px;
     float: left;
@@ -71,12 +71,12 @@ section {
     width: 30%;
     background-color: lightgray;
     color: black;
-    font-family: PokeGB;
+    font-family: pokeFont;
 }
 
 aside {
     background-color: lightgray;
     color: black;
-    font-family: PokeGB;
+    font-family: pokeFont;
     margin: 1.5%;
 }
