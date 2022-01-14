@@ -1,4 +1,5 @@
 body {
+    display: flex;
     background-image: url("./images/arena.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -9,11 +10,51 @@ body {
     src: url(./PokemonGb-RAeo.ttf);
 }
 header {
+    width: 100%;
     text-align: center;
     color: black;
-    background-color: lightgray;
     font-family: PokeGB;
     padding: .2rem;
+}
+
+.cloud{
+    justify-content: center;
+    width:500px;
+    height:90px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+    margin-left: 90px;
+    padding: 3px;
+    float: left;
+}
+
+.cloud h1{
+    font-size: 30px;
+    line-height: 1.5;
+    padding-top: 10px;
+    margin: 18px;
+    text-shadow: 2px 2px rgb(42, 117, 187,0.7);
+}
+
+.cloud2{
+    justify-content: center;
+    align-content:center
+    width:960px;
+    height:90px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+    margin: 90px;
+    padding: 3px;
+    float: left;
+}
+
+.cloud2 p{
+    line-height: 1.4;
+    padding-top: 5px;
+    margin-top: -2px;
+    text-shadow: 2px 2px rgb(255, 203, 5, 0.5);
 }
 
 .results-you .results-comp {
@@ -34,7 +75,6 @@ section {
 }
 
 aside {
-    float: left;
     background-color: lightgray;
     color: black;
     font-family: PokeGB;
