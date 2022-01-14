@@ -1,3 +1,5 @@
-.arena {
-    background-image: url("./images/arena.jpeg");
+* {
+    background-image: url("./images/arena.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }

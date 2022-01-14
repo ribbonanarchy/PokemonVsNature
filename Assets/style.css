@@ -72,6 +72,7 @@ body {
 
 #day1, #day2, #day3, #day4, #day5{
     position: relative;
+    background-color: pickColo;
     display: flex;
     flex-direction: column;
     background-color: floralwhite;
