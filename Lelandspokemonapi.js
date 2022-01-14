@@ -66,49 +66,6 @@ var pokemonTypes = [
     pokemonArray: ['0']}
 ];
 
-console.log(pokemonTypes[4].pokemonArray);
-var pokeArray;
-var typeMasterArray; //hold all the pokemon affected by current weather
-var userPokeChoice; //pick 6 random from typeMasterArray
-
-// populate arrays for each type
-for(var i=0; i<pokemonTypes.length; i++) {
-   pokemonTypes[i].pokemonArray = getTypeAPI(i);
-}
-
-function getTypeAPI(i) {
-    fetch('https://pokeapi.co/api/v2/type/' + pokemonTypes[i].id + '/')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(data => {
-        pokeArray = data.pokemon.slice(0,10);
-        return pokeArray;
-    })
-    .then(function(pokeArray) {
-        pokemonTypes[i].pokemonArray = pokeArray;
-        console.log('Here are ten ' + pokemonTypes[i].type + ' pokemon: ');
-        console.log(pokemonTypes[i].pokemonArray)
-        return;
-    });
-}
-
-// function assignArrays(data) {
-//     pokeArray = data.pokemon;
-//     pokemonTypes[i].pokemonArray = pokeArray.slice(0,10);
-// }
-
-
-
-// for (i=0; i<pokemonTypes.length; i++) {
-// console.log("the pokemon type array is " + pokemonTypes[i].type);
-// };
-// console.log("the pokemon type array length is " + pokemonTypes.length);
-var pokemonDefaultPower = 100;
-var pokemonNegativeStatus = pokemonDefaultPower-50;
-var pokemonPositiveStatus = pokemonDefaultPower+50;
-// console.log("the positive effect is " + pokemonPositiveStatus);
-// console.log("the negative effect is " + pokemonNegativeStatus);
 var weatherTypes = [
     {type: 'clearSky',//[0] 
     positiveIndex: [2,13,9],
@@ -145,11 +102,65 @@ var weatherTypes = [
     //fairy+[15], ghost+[7], bug+[6], fighting-[1], electric-[12], 
     },
 ];
+
+console.log(pokemonTypes[4].pokemonArray);
+var pokeArray;
+var typeMasterArray; //hold all the pokemon affected by current weather
+var userPokeChoice; //pick 6 random from typeMasterArray
+var currentPlus, currentNegative, currentWeatherIndex;
+var currentWeather = 'thunderstorm';
+console.log("the current weather is " + currentWeather);
+
+// populate arrays for each type
+for(var i=0; i<pokemonTypes.length; i++) {
+   pokemonTypes[i].pokemonArray = getTypeAPI(i, currentWeather);
+}
+
+function getTypeAPI(i, currentWeather) {
+    fetch('https://pokeapi.co/api/v2/type/' + pokemonTypes[i].id + '/')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(data => {
+        pokeArray = data.pokemon.slice(0,10);
+        return pokeArray;
+    })
+    .then(function(pokeArray) {
+        pokemonTypes[i].pokemonArray = pokeArray;
+        console.log('Here are ten ' + pokemonTypes[i].type + ' pokemon: ');
+        console.log(pokemonTypes[i].pokemonArray);
+        return pokemonTypes;
+    })
+    .then(function(pokemonTypes) {
+        currentWeatherIndex = weatherTypes.findIndex(weather => weather.type === currentWeather);
+        currentPlus = weatherTypes[currentWeatherIndex].positiveIndex;
+        currentNegative = weatherTypes[currentWeatherIndex].negativeIndex;
+        
+    });
+}
+
+
+// function assignArrays(data) {
+//     pokeArray = data.pokemon;
+//     pokemonTypes[i].pokemonArray = pokeArray.slice(0,10);
+// }
+
+
+
+// for (i=0; i<pokemonTypes.length; i++) {
+// console.log("the pokemon type array is " + pokemonTypes[i].type);
+// };
+// console.log("the pokemon type array length is " + pokemonTypes.length);
+var pokemonDefaultPower = 100;
+var pokemonNegativeStatus = pokemonDefaultPower-50;
+var pokemonPositiveStatus = pokemonDefaultPower+50;
+// console.log("the positive effect is " + pokemonPositiveStatus);
+// console.log("the negative effect is " + pokemonNegativeStatus);
+
 //console.log("this is the array of weatherTypes " + weatherTypes)
 //console.log("this is the first Index of weatherTypes " + weatherTypes[0])
 
-var currentWeather = 'thunderstorm';
-console.log("the current weather is " + currentWeather)
+
 //create an equation for the types of weather associated with pokemon Type
 /*I will need to associate each pokemonType with a starting power of 'pokemonDefaultPower'
 then loop through each type of pokemon?
