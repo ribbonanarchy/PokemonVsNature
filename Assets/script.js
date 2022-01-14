@@ -142,9 +142,22 @@ $('#pokeRow').click(function(){
   console.log(this,'this is clicked');
 })
 
-$('#battleButton').click(function(){
-  $(document.location.replace(battlePage))
-})
+// $('#battleButton').click(function(){
+//   $(document.location.replace(battlePage))
+// })
+
+
+function battleTab() {
+  window.open(
+    "battle.html", "_blank");
+    console.log('test')
+}
+
+
+     
+
+
+
 
 
 
