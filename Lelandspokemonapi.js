@@ -71,7 +71,8 @@ var pokeArray;
 
 // populate arrays for each type
 for(var i=0; i<pokemonTypes.length; i++) {
-   getTypeAPI(i);
+   pokemonTypes[i].pokemonArray = getTypeAPI(i);
+   console.log(pokemonTypes[i].pokemonArray);
 }
 
 function getTypeAPI(i) {
@@ -80,13 +81,23 @@ function getTypeAPI(i) {
         return response.json();
     })
     .then(data => {
-        pokeArray = data.pokemon;
-        console.log(pokeArray.slice(0,10));
-        return pokeArray.slice(0,10);
+        pokeArray = data.pokemon.slice(0,10);
+        return pokeArray;
     })
+    .then(function(pokeArray) {
+        pokemonTypes[i].pokemonArray = pokeArray;
+        console.log('Here are ten ' + pokemonTypes[i].type + ' pokemon: ');
+        console.log(pokemonTypes[i].pokemonArray)
+        return;
+    });
 }
 
-console.log(pokemonTypes[4].pokemonArray);
+// function assignArrays(data) {
+//     pokeArray = data.pokemon;
+//     pokemonTypes[i].pokemonArray = pokeArray.slice(0,10);
+// }
+
+
 
 // for (i=0; i<pokemonTypes.length; i++) {
 // console.log("the pokemon type array is " + pokemonTypes[i].type);
