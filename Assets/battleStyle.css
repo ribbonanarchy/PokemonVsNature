@@ -12,11 +12,31 @@ header {
     text-align: center;
     color: black;
     background-color: lightgray;
-    font-family: PokeGb;
+    font-family: PokeGB;
     padding: .2rem;
+}
+
+.results-you .results-comp {
+    background-color: lightgray;
+    color: black;
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+}
+
+section {
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+    background-color: lightgray;
+    color: black;
+    font-family: PokeGB;
 }
 
 aside {
     float: left;
-    color: white;
+    background-color: lightgray;
+    color: black;
+    font-family: PokeGB;
+    margin: 1.5%;
 }
