@@ -4,7 +4,7 @@
 //     var instances = M.Autocomplete.init(elems, options);
 //   });
 
-  console.log('hello this is the script correctly linked');
+//console.log('hello this is the script correctly linked');
 
   apiKey = '79ae4c44176953beec1155138bc60d35'
 var cityName = '';
@@ -19,13 +19,13 @@ function getCityWeather() {
     //FETCHING THE WEATHER BASED OFF CITY NAME
     fetch(url)
     .then(function (response) {
-        console.log("hello this is the getCityWeather function");
-            console.log(response);
+        //console.log("hello this is the getCityWeather function");
+            //console.log(response);
                 return response.json();
             })
             .then(function (data) {
-                console.log("hello this is the data function");
-                console.log("this is current weather", data);
+                //console.log("hello this is the data function");
+                //console.log("this is current weather", data);
                 var iconData = data.weather[0].icon;
                 //var iconImg = $('<img>');
                 $('#iconImg').addClass("card.small left")
@@ -35,10 +35,10 @@ function getCityWeather() {
                 $('#temp').text(temp + " degrees")
                 var windSpeed = data.wind.speed
                 $('#windSpeed').text(windSpeed + " is the Wind Speed")
-                console.log(data.name);
+               // console.log(data.name);
                 latitude = data.coord.lat;
                 longitude = data.coord.lon;
-                console.log("the latitude is " + latitude, "the longitude is " + longitude);
+                //console.log("the latitude is " + latitude, "the longitude is " + longitude);
                 getForecastUvi(latitude, longitude);
                 $('#date').text(moment().format('dddd, MM/DD/YYYY'))
                 //add the date for the next five days?  using moment or weather API?
@@ -132,14 +132,14 @@ $('#city-form').submit(function (event) {
     $('#currentWeatherCard').removeClass('hide');
     $('.forecastCard').removeClass('hide');
     event.preventDefault();
-    console.log('hello this is the submit button function');
+    //console.log('hello this is the submit button function');
     cityListPopulate();
     getCityWeather();
 })
 
 $('#pokeRow').click(function(){
   $('#battleButton').removeClass('hide');
-  console.log(this,'this is clicked');
+  //console.log(this,'this is clicked');
 })
 
 $('#battleButton').click(function(){
