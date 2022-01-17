@@ -285,7 +285,7 @@ $('#pokeRow').click(function(){
 $('#battleButton').click(function(){
   $(document.location.replace(battlePage))
 })
-function weatherToPokemon (day0Weather) {
+function weatherToPokemon (day0Weather, day1Weather, day2Weather, day3Weather, day4Weather) {
     //this variable needs to change because it's giving two weatherTypes if I Type in a new city
     //THE JS SEEMS TO BE STORING THE DATA FROM THE PREVIOUS CITY SEARCHED
     //MAYBE WE NEED TO REFRESH WHEN NEW CITY IS SEARCHED?
@@ -309,12 +309,13 @@ function getTypeAPI(i, currentWeather) {
     })
     .then(data => {
         pokeArray = data.pokemon.slice(0,10);
+        console.log(data.pokemon)
         return pokeArray;
     })
     .then(function(pokeArray) {
         pokemonTypes[i].pokemonArray = pokeArray;
-        //console.log('Here are ten ' + pokemonTypes[i].type + ' pokemon: ');
-        //console.log(pokemonTypes[i].pokemonArray);
+        console.log('Here are ten ' + pokemonTypes[i].type + ' pokemon: ');
+        console.log('this is the pokemon array' + pokemonTypes[i].pokemonArray);
         return pokemonTypes;
     })
     .then(function(pokemonTypes) {
@@ -324,7 +325,9 @@ function getTypeAPI(i, currentWeather) {
         console.log('the current weather index is ' + currentWeatherIndex);
         console.log('the positive index is ' + currentPlus)
         console.log('the negative index is ' + currentNegative)
-        console.log('this is an example of the pokemon effected positively' + pokemonTypes[i].pokemonArray[currentPlus])
+        for (j=0; j<currentPlus.length; j++) {
+        console.log('this is an example of the pokemon effected positively ' + pokemonTypes[j].id)
+        };
     });
 }
 
