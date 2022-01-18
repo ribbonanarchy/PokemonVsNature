@@ -5,79 +5,233 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="Assets\Materialize\materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="Assets/Materialize/materialize.min.css">
     <link rel="stylesheet" href="Assets/style.css">
 
-    <title>Pokemon Weather</title>
+
+    <title>PokeWeather</title>
 </head>
 
 <body>
+    <section>
 
-    <!-- Header with title and description Robyn -->
-    <div id="header">
-        <h1>Pokemon Vs. Nature</h1>
-        <h2>Pick a location and a date within the next 5 days to determine the conditions of your Pokemon battle! Once
-            we have your location and time, you will be
-            presented with Pokemon options to choose your champion.</h2>
-    </div>
+        <div class="clouds">
+            <div class="cloud">
+                <p>Poké- <br> Weather</p>
+            </div>
+            <div class="cloud2">
+                <p>
+                    Enter a real world location for battle! Then choose which day you would like to battle!
+                    Then choose your pokemon! Keep in mind real time weather will effect
+                    your pokémon's chances of becoming a CHAMPION!
+                </p>
+                <!-- <div class="addedCloud">
 
-    <div class="location">
-        <div class="wrap">
-            <div class="search">
-                <input type="text" class="citySearch" placeholder="Place or country...">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
+                </div> -->
+            </div>
+
+            <div class="cloud3">
+                <!-- former d class location and wrap-->
+                <div id="cloud3Search">
+                    <div id="wrap">
+                        <p>Press Enter</p>
+                        <form id="city-form">
+                            <label for="autocomplete-input"></label>
+                            <input type="text" id="autocomplete-input" class="autocomplete" class="citySearch"
+                                placeholder="Enter location...">
+
+                            <button id="searchBtn" type="submit" class="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
+    <!--two sect's prevents conflicts while adjusting screen size -->
+    <section>
 
-    <div class="forecast">
-        <div class="days">
-            <div id="day1">
-
+        <div class="fiveDayForecast">
+            <!-- <div class='row col.m1 forecastRow'> -->
+            <div id="day0Card" class=" forecastCard card card-content white-text hide">
+                <span id="cityTitleCard" class="card-title"></span>
+                <p id="date0"></p>
+                <img id="iconImg0">
+                <p id="temp0"></p>
+                <p id="humidity0"></p>
+                <p id="windSpeed0"></p>
+                <p id="uvi0"></p>
             </div>
-            <div id="day2">
-
+            <div id="day1Card" class="  forecastCard card  card-content white-text hide">
+                <span id="cityTitleCard" class="card-title"></span>
+                <p id="date1"></p>
+                <img id="iconImg1">
+                <p id="temp1"></p>
+                <p id="humidity1"></p>
+                <p id="windSpeed1"></p>
+                <p id="uvi1"></p>
             </div>
-            <div id="day3">
-
+            <div id="day2Card" class="  forecastCard card  card-content white-text hide">
+                <span id="cityTitleCard" class="card-title"></span>
+                <p id="date2"></p>
+                <img id="iconImg2">
+                <p id="temp2"></p>
+                <p id="humidity2"></p>
+                <p id="windSpeed2"></p>
+                <p id="uvi2"></p>
             </div>
-            <div id="day4">
-
+            <div id="day3Card" class="  forecastCard card card-content white-text hide">
+                <span id="cityTitleCard" class="card-title"></span>
+                <p id="date3"></p>
+                <img id="iconImg3">
+                <p id="temp3"></p>
+                <p id="humidity3"></p>
+                <p id="windSpeed3"></p>
+                <p id="uvi3"></p>
             </div>
-            <div id="day5">
+            <div id="day4Card" class="  forecastCard card  card-content white-text hide">
+                <span id="cityTitleCard" class="card-title"></span>
+                <p id="date4"></p>
+                <img id="iconImg4">
+                <p id="temp4"></p>
+                <p id="humidity4"></p>
+                <p id="windSpeed4"></p>
+                <p id="uvi4"></p>
+            </div>
 
+            <!-- </div> -->
+        </div>
+    </section>
+
+    <section>
+        <div class="pokemon">
+            <!-- <div class="card horizontal" id="pokeRow"> -->
+            <div id="pokeRow">
+                <div class="pokeCard card hide" id="poke0">
+                    <div class="screen_header">
+                        <span class="poke-name"></span>
+                        <span class="poke-id"></span>
+                    </div>
+                    <div class="stats__types">
+                        <span class="poke-type-one"></span>
+                        <!-- placing class -->
+
+                        <span class="poke-type-two"></span>
+                    </div>
+                    <div class="screen_image">
+                        <img src="" class="poke-front-image" alt="front image of pokemon">
+                    </div>
+                </div>
+                <div class="pokeCard card hide" id="poke1">
+                    <div class="screen_header">
+                        <span class="poke-name"></span>
+                        <span class="poke-id"></span>
+                    </div>
+                    <div class="stats__types">
+                        <span class="poke-type-one"></span>
+                        <!-- placing class -->
+
+                        <span class="poke-type-two"></span>
+                    </div>
+                    <div class="screen_image">
+                        <img src="" class="poke-front-image" alt="front image of pokemon">
+                    </div>
+                </div>
+                <div class="pokeCard card hide" id="poke2">
+                    <div class="screen_header">
+                        <span class="poke-name"></span>
+                        <span class="poke-id"></span>
+                    </div>
+                    <div class="stats__types">
+                        <span class="poke-type-one"></span>
+                        <!-- placing class -->
+
+                        <span class="poke-type-two"></span>
+                    </div>
+                    <div class="screen_image">
+                        <img src="" class="poke-front-image" alt="front image of pokemon">
+                    </div>
+                </div>
+                <div class="pokeCard card hide" id="poke3">
+                    <div class="screen_header">
+                        <span class="poke-name"></span>
+                        <span class="poke-id"></span>
+                    </div>
+                    <div class="stats__types">
+                        <span class="poke-type-one"></span>
+                        <!-- placing class -->
+
+                        <span class="poke-type-two"></span>
+                    </div>
+                    <div class="screen_image">
+                        <img src="" class="poke-front-image" alt="front image of pokemon">
+                    </div>
+                </div>
+                <div class="pokeCard card hide" id="poke4">
+                    <div class="screen_header">
+                        <span class="poke-name"></span>
+                        <span class="poke-id"></span>
+                    </div>
+                    <div class="stats__types">
+                        <span class="poke-type-one"></span>
+                        <!-- placing class -->
+
+                        <span class="poke-type-two"></span>
+                    </div>
+                    <div class="screen_image">
+                        <img src="" class="poke-front-image" alt="front image of pokemon">
+                    </div>
+                </div>
+                <div class="pokeCard card hide" id=poke5>
+                    <div class="screen_header">
+                        <span class="poke-name"></span>
+                        <span class="poke-id"></span>
+                    </div>
+                    <div class="stats__types">
+                        <span class="poke-type-one"></span>
+                        <!-- placing class -->
+
+                        <span class="poke-type-two"></span>
+                    </div>
+                    <div class="screen_image">
+                        <img src="" class="poke-front-image" alt="front image of pokemon">
+                    </div>
+                </div>
             </div>
         </div>
-
-    </div>
-
-    <!-- Pokemon option card Robyn -->
-    <div id="poke-container">
-        <div class="pokeCardContainer"></div>
-          <div class="card poke-card" id="poke1"></div>
-          <div class="card poke-card" id="poke2"></div>
-          <div class="card poke-card" id="poke3"></div>
-          <div class="card poke-card" id="poke4"></div>
-          <div class="card poke-card" id="poke5"></div>
-          <div class="card poke-card" id="poke6"></div>
         </div>
-    </div>
+    </section>
+
+    <!-- style of types with color backgrounds -->
+
+
+    <section>
+        <div class="battle">
+            <button onclick='battleTab()' class="waves-effect waves-light btn-large hide" id="battleButton"><i
+                    class="material-icons right"></i>Let's Battle</button>
+        </div>
+    </section>
 
 
 
 
 
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="Assets/script.js"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+    <script src="Assets/Materialize/materialize.min.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="Assets/script.js"></script>
 
 </body>

@@ -1,0 +1,122 @@
+body {
+    background-image: url("./images/arenaBattlePage.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+@font-face {
+    font-family: PokeGB;
+    src: url(./PokemonGb-RAeo.ttf);
+}
+/* header {
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+    font-family: PokeGB;
+    padding: .2rem;
+} */
+
+/* .results-you .results-comp {
+    background-color: lightgray;
+    color: black;
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+} */
+
+/* section {
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+    background-color: lightgray;
+    color: black;
+    font-family: PokeGB;
+}
+
+aside {
+    float: left;
+    background-color: lightgray;
+    color: black;
+    font-family: PokeGB;
+    margin: 1.5%;
+} */
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: pokeFont;
+    padding: 0.5rem;
+}
+
+.cloud{
+    justify-content: center;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+}
+
+.cloud h1{
+    font-size: 30px;
+    line-height: 1.5;
+    padding-top: 10px;
+    margin: 10px;
+    text-shadow: 2px 2px rgb(42, 117, 187,0.7);
+}
+
+.cloud2 {
+    justify-content: center;
+    align-content: center;
+    background: #ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius: 100px;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.cloud2 p{
+    line-height: 1.4;
+    padding-top: 5px;
+    margin-top: -2px;
+    text-shadow: 2px 2px rgb(255, 203, 5, 0.5);
+}
+
+.scoreContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: .5rem 0 2rem 0;
+}
+
+.results-you .results-comp {
+    background-color: lightgray;
+    color: black;
+    float: left;
+    margin: 1.5%;
+    width: 30%;
+}
+
+.pokeContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35vh;
+}
+
+section {
+    float: left;
+    margin: 1.5%;
+    background-color: lightgray;
+    color: black;
+    font-family: pokeFont;
+}
+
+aside {
+    background-color: lightgray;
+    color: black;
+    font-family: pokeFont;
+    margin: 1.5%;
+    position: absolute;
+}
