@@ -84,7 +84,7 @@ body section{
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
     border-radius:100px;
     padding: 15px;
-    text-align: center;
+    /* text-align: center; */
     font-family: pokeFont;
     float: right;
     display: flex;
@@ -201,6 +201,88 @@ body section{
     text-shadow: 3px 3px rgb(42, 117, 187,0.8);
 }
 
+.pokeCard {
+    box-shadow: inset 0 0 3px 3px rgba(0,0,0,.3);
+    border-radius: 15px;
+    height: 100%;
+    width: 200px;
+    padding: 15px;
+  }
+  .hide {
+    display: none;
+  }
+  .normal {
+  background: #BABAAE;
+  }
+
+  .fighting {
+    background: #A75543;
+  }
+
+  .flying {
+    background: #78A2FF;
+  }
+
+  .poison {
+    background: #A95CA0;
+  }
+
+  .ground {
+    background: #EECC55;
+  }
+
+  .rock {
+    background: #CCBD72;
+  }
+
+  .bug {
+    background: #C2D21E;
+  }
+
+  .ghost {
+    background: #7975D7;
+  }
+
+  .steel {
+    background: #C4C2DB;
+  }
+
+  .fire {
+    background: #FA5643;
+  }
+
+  .water {
+    background: #56ADFF;
+  }
+
+  .grass {
+    background: #8CD750;
+  }
+
+  .electric {
+    background: #FDE139;
+  }
+
+  .psychic {
+    background: #FA65B4;
+  }
+
+  .ice {
+    background: #96F1FF;
+  }
+
+  .dragon {
+    background: #8673FF;
+  }
+
+  .dark {
+    background: #8D6855;
+  }
+
+  .fairy {
+    background: #F9AEFF;
+  }
+
 .pokemon{
     position: absolute; 
     margin-left: 185px;
@@ -291,7 +373,7 @@ body section{
 
 }
 
-@media screen and (max-width:1506px) and (min-width:900px) {
+@media screen and (max-width:1506px) and (min-width:1099px) {
     
     .clouds {
         margin-left: 10px;
@@ -360,39 +442,146 @@ body section{
     font-size: 11px;
     }
 
+    .pokemon{
+        margin-left: 5px;
+        
+    }
+
     #poke0,#poke1,#poke2,#poke3,#poke4,#poke5{
     margin-left: 5px;
+    height:160px;
+    width: 160px;
     float: left;
+    }
+
+    #battleButton{
+    /* top: 545px; */
+    left: 479px;
     }
 
 }
 
-/* @media screen and (max-width:1072) and (min-width:700px){
+@media screen and (max-width:1098px) and (min-width:810px){
+    .cloud{
+        float: none;
+        width: 205px;
+        margin-left: 169px;
+        height: 95px;
+    }
+    .cloud p{
+        font-size: 22px;
+        margin: 1px;
+        margin-top: 16px;
+    }
 
-} */
+    .cloud2{
+        float: none;
+        width: 410px;
+        height:105px;
+        top: -60px;
+        left: 70px;
+    }
+
+    .cloud2 p{
+        font-size:13px;
+    }
+
+    .cloud3{
+        float: none;
+        left: 260px;
+        width: 215px;
+        height: 92px;
+        top: -75px;
+        line-height: 1;
+    }
+
+    #autocomplete-input{
+        width: 200px;
+        font-size: 12px;
+        height: 42px;
+        padding: 15px 0px 1px 0px;
+    }
+
+    #wrap p{
+        font-size: 17px;
+    }
+
+    .searchButton{
+        height: 45px;
+        width: 45px;
+    }
+
+    .fiveDayForecast{
+        margin-left: 50px;
+        top: 190px;
+    }
+
+    #day0Card, #day1Card, #day2Card,
+    #day3Card, #day4Card{
+        width: 130px;
+        height: 240px;
+        line-height: 1;
+    }
+
+    #temp0,#temp1,#temp2,#temp3,#temp4,
+    #humidity0, #humidity1, #humidity2,#humidity3,#humidity4,
+    #windSpeed0,#windSpeed1,#windSpeed2,#windSpeed3,#windSpeed4,
+    #uvi0,#uvi1,#uvi2,#uvi3,#uvi4{
+        font-size: 11px;
+    }
+    #date0,#date1,#date2,#date3,#date4{
+        font-size: 13px;
+        padding-top: 1px;
+    }
+    #iconImg0,#iconImg1,#iconImg2,
+    #iconImg3,#iconImg4{
+        width: 50px;
+        height: 50px;
+    }
+
+    #poke0,#poke1,#poke2,#poke3,#poke4,#poke5{
+        height:125px;
+        width: 125px;
+        padding: 5px;
+        border-radius: 120px;
+    }
+
+   .pokemon{
+        top:113px;
+        margin-left: 5px;
+
+    }
+
+    #battleButton{
+        left: 20px;
+        top: 220px;
+    }
+}
 
 
-@media screen and (max-width: 899px) and (min-width:0px)  {
+
+
+@media screen and (max-width: 809px) and (min-width:0px)  {
     .clouds{
         margin-left: 1px;
-        margin-top: 4px;
+        margin-top: 10px;
         
     }
     .cloud{
         margin-left: 140px;
-        height: 190px;
-        width: 190px;
+        height: 95px;
+        width: 205px;
         padding: 0px;
         float: none;
     }
     .cloud p{
         font-size: 21px;
-        padding-left: 2px;
+        padding-left: 9px;
         margin: 19px;
         
     }
     .cloud2{
-        margin-top: -110px;
+        margin-top: 2px;
         height: 92px;
         width: 380px;
         float: none;
@@ -419,7 +608,7 @@ body section{
         width: 200px;
         font-size: 12px;
         height: 42px;
-        padding: 10px 0px 1px 0px;
+        padding: 5px 0px 1px 0px;
     }
 
     .searchButton{
@@ -438,7 +627,6 @@ body section{
         width: 130px;
         height: 210px;
         line-height: 1;
-        
     }
 
     #day4Card{
@@ -477,11 +665,6 @@ body section{
         right: 32px;
     }
 
-    .battle{
-        margin-top: 755px;
-        margin-left: 175px;
-    }
-
     #battleButton{
         height: 120px;
         width: 120px;
@@ -491,6 +674,8 @@ body section{
         line-height: 1.50;
         background-color: rgb(255, 203, 5, 0.9);
         box-shadow: 6px 6px rgba(0, 0, 0, 0.2);
+        top: 725px;
+        left: 180px;
     }
 
     #battleButton:hover{
