@@ -297,9 +297,12 @@ $('#battleButton').removeClass('hide');
 //console.log(this,'this is clicked');
 })
 
-$('#battleButton').click(function(){
-$(document.location.replace(battlePage))
-})
+function battleTab() {
+  window.open(
+    "battle.html", "_blank");
+    console.log('test')
+}
+
 function weatherToPokemon (day0Weather, day1Weather, day2Weather, day3Weather, day4Weather) {
   //this variable needs to change because it's giving two weatherTypes if I Type in a new city
   //THE JS SEEMS TO BE STORING THE DATA FROM THE PREVIOUS CITY SEARCHED
@@ -471,7 +474,7 @@ var idOrName = 150//document.getElementById('autocomplete-input').value
 
 //DOM OBJECTS
 var pokeCard = document.querySelector('.pokeCard');
-var pokeName = document.querySelector('.poke-name');
+var pokeName = document.querySelector('.poke-name',);
 var pokeId = document.querySelector('.poke-id');
 var pokeFrontImage = document.querySelector('.poke-front-image');
 var pokeTypeOne = document.querySelector('.poke-type-one');
