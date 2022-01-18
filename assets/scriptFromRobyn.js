@@ -122,7 +122,7 @@ var weatherTypes = [
 var pokeArray;
 var typeMasterArray; //hold all the pokemon affected by current weather
 var userPokeChoice; //pick 6 random from typeMasterArray
-var currentPlus, currentNegative, currentWeatherIndex;
+var currentWeather, currentPlus, currentNegative, currentWeatherIndex;
 
 // ATTEMPT TO LOAD JAVASCRIPT DATA FROM EXTERNAL SOURCE - ASK PROF?!!
 // function LoadScript() {
@@ -188,20 +188,20 @@ function getForecastUvi (lat,lon) {
         })
         .then(function (data) {
             //console.log("this is the oneCall Api ", data)
-            var uvi = data.current.uvi
+            var uvi = data.current.uvi;
             $('#uvi').text(uvi + " UVI index")
             for (i=0; i<5; i++) {
                 //console.log("this is the forecast ", data.daily[i])
-                var formatDate = moment.unix(data.daily[i].dt).format('dddd, MM/DD/YYYY')
+                var formatDate = moment.unix(data.daily[i].dt).format('dddd, MM/DD/YYYY');
                 $('#date' + i).text(formatDate);
-                var iconImgForecast = data.daily[i].weather[0].icon
-                $('#iconImg' + i).attr('src', 'https://openweathermap.org/img/wn/' + iconImgForecast + '@2x.png')
+                var iconImgForecast = data.daily[i].weather[0].icon;
+                $('#iconImg' + i).attr('src', 'https://openweathermap.org/img/wn/' + iconImgForecast + '@2x.png');
                 var tempForecast = data.daily[i].temp.day;
                 $('#temp' +i).text(tempForecast + ' degrees');
                 var humidityForecast = data.daily[i].humidity
-                $('#humidity' + i).text(humidityForecast + "% humidity")
+                $('#humidity' + i).text(humidityForecast + "% humidity");
                 var windSpeedForecast = data.daily[i].wind_speed;
-                $('#windSpeed' + i).text(windSpeedForecast + " Wind Speed")
+                $('#windSpeed' + i).text(windSpeedForecast + " Wind Speed");
                 var uviForecast = data.daily[i].uvi;
                 $('#uvi' + i).text(uviForecast + " UVI index");
                 
@@ -215,7 +215,8 @@ function getForecastUvi (lat,lon) {
           //console.log(data.daily[0].weather[0].main);
           $(".pokeCard").removeClass("hide");
           var day0Weather = data.daily[0].weather[0].main;
-          weatherToPokemon(day0Weather)
+        //   weatherToPokemon(day0Weather);
+            currentWeather = day0Weather;
         })
         $('#day1Card').click(function() {
           //console.log("hello this is the day1Card")
@@ -223,7 +224,8 @@ function getForecastUvi (lat,lon) {
           //console.log(data.daily[1].weather[0].main);
           $(".pokeCard").removeClass("hide");
           var day1Weather = data.daily[1].weather[0].main;
-          weatherToPokemon(day1Weather)
+        //   weatherToPokemon(day1Weather);
+            currentWeather = day1Weather;
         })
         $('#day2Card').click(function() {
           //console.log("hello this is the day2Card")
@@ -231,7 +233,8 @@ function getForecastUvi (lat,lon) {
           //console.log(data.daily[2].weather[0].main);
           $(".pokeCard").removeClass("hide");
           var day2Weather = data.daily[2].weather[0].main;
-          weatherToPokemon(day2Weather)
+        //   weatherToPokemon(day2Weather);
+            currentWeather = day2Weather;
         })
         $('#day3Card').click(function() {
           //console.log("hello this is the day3Card")
@@ -239,7 +242,8 @@ function getForecastUvi (lat,lon) {
           //console.log(data.daily[3].weather[0].main);
           $(".pokeCard").removeClass("hide");
           var day3Weather = data.daily[3].weather[0].main;
-          weatherToPokemon(day3Weather)
+        //   weatherToPokemon(day3Weather);
+            currentWeather = day3Weather;
         })
         $('#day4Card').click(function() {
           //console.log("hello this is the day4Card")
@@ -247,8 +251,13 @@ function getForecastUvi (lat,lon) {
           //console.log(data.daily[4].weather[0].main);
           $(".pokeCard").removeClass("hide");
           var day4Weather = data.daily[4].weather[0].main;
-          weatherToPokemon(day4Weather)
+        //   weatherToPokemon(day4Weather);
+            currentWeather = day4Weather;
         })
+        return currentWeather;
+        })
+        .then(function(currentWeather) {
+            console.log(currentWeather);
         })
 }
 function cityListPopulate () {
@@ -289,16 +298,16 @@ function weatherToPokemon (day0Weather, day1Weather, day2Weather, day3Weather, d
     //this variable needs to change because it's giving two weatherTypes if I Type in a new city
     //THE JS SEEMS TO BE STORING THE DATA FROM THE PREVIOUS CITY SEARCHED
     //MAYBE WE NEED TO REFRESH WHEN NEW CITY IS SEARCHED?
-    var currentWeather = day0Weather || day1Weather || day2Weather || day3Weather || day4Weather;
+    currentWeather = day0Weather || day1Weather || day2Weather || day3Weather || day4Weather;
     console.log("the current weather is " + currentWeather);
     
     // populate arrays for each type
     for(var i=0; i<pokemonTypes.length; i++) {
-       pokemonTypes[i].pokemonArray = getTypeAPI(i, currentWeather);
+    //    pokemonTypes[i].pokemonArray = getTypeAPI(i, currentWeather);
     }
     console.log(currentWeather);
 }
-weatherToPokemon ();
+weatherToPokemon();
 
 
 
