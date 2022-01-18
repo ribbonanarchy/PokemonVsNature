@@ -118,6 +118,7 @@ var weatherTypes = [
 ];
 
 //console.log(pokemonTypes[4].pokemonArray);
+var pokeRow = document.getElementById('pokeRow');
 var pokeArray;
 var typeMasterArray = []; //hold all the pokemon affected by current weather
 var userPokeChoice = []; //pick 6 random from typeMasterArray
@@ -297,9 +298,14 @@ $('#battleButton').removeClass('hide');
 //console.log(this,'this is clicked');
 })
 
-$('#battleButton').click(function(){
-$(document.location.replace(battlePage))
-})
+// $('#battleButton').click(function(){
+// $(document.location.replace(battlePage))
+// })
+
+function battleTab() {
+  window.open("battle.html", "_blank");
+}
+
 function weatherToPokemon (day0Weather, day1Weather, day2Weather, day3Weather, day4Weather) {
   //this variable needs to change because it's giving two weatherTypes if I Type in a new city
   //THE JS SEEMS TO BE STORING THE DATA FROM THE PREVIOUS CITY SEARCHED
@@ -369,6 +375,8 @@ function getTypeAPI(i, currentWeather) {
       return userPokeChoice;
   })
   .then(function(userPokeChoice) {
+    pokeRow.innerHTML='';
+
       for(var i=0; i<userPokeChoice.length; i++) {
           getOnePokemon(userPokeChoice[i].pokemon.url);
           console.log(userPokeChoice[i].pokemon.url);
@@ -490,6 +498,50 @@ function getOnePokemon(url) {
       console.log('hello this is the data function for urlSinglePoke');
       console.log(data);
       
+      var divParentContainer = document.createElement('div');
+      divParentContainer.classList.add('pokeCard', 'card')
+      var divScreenHeader = document.createElement('div');
+      divScreenHeader.classList.add('screen_header')
+      var pokeNameSpan = document.createElement('span');
+      pokeNameSpan.classList.add('poke-name')
+      pokeNameSpan.textContent=data['name']
+      divScreenHeader.appendChild(pokeNameSpan)
+      divParentContainer.appendChild(divScreenHeader)
+      // var pokeIdSpan = document.createElement('span')
+      // pokeIdSpan.classList.add('poke-id');
+      // pokeIdSpan.textContent=data['name']
+      // divScreenHeader.appendChild(pokeIdSpan);
+      var divStatsTypes = document.createElement('div')
+      divStatsTypes.classList.add('stats__types')
+      var pokeTypeOneSpan = document.createElement('span')
+      pokeTypeOneSpan.classList.add('poke-type-one');
+      var dataTypes = data['types'];
+      var dataFirstType = dataTypes[0];
+      pokeTypeOneSpan.textContent=dataFirstType['type']['name']
+      divStatsTypes.appendChild(pokeTypeOneSpan);
+      divParentContainer.appendChild(divStatsTypes);
+      var divScreenImage = document.createElement('div')
+      divScreenImage.classList.add('screen_image')
+      var pokeImage = document.createElement('img')
+      pokeImage.classList.add('poke-front-image')
+      pokeImage.alt='front image of pokemon'
+      pokeImage.src= data['sprites']['front_default']
+      divScreenImage.appendChild(pokeImage);
+      divParentContainer.appendChild(divScreenImage);
+      divParentContainer.classList.add(dataFirstType['type']['name']);
+      console.log(divParentContainer);
+      pokeRow.appendChild(divParentContainer);
+      //shows name of pokemon
+      // console.log(data['name']);
+      // pokeName.textContent = (data['name']);
+      // //shows 1st type of pokemon i.e 'grass/water/poison'
+      // console.log(dataFirstType['type']['name']);
+      // pokeTypeOne.textContent = (dataFirstType)['type']['name'];
+      // //images for pokemon
+      // pokeFrontImage.src = data['sprites']['front_default'];
+      // //display the color for the type of pokemon!!
+      // pokeCard.classList.add((dataFirstType)['type']['name']);
+
       //shows name of pokemon
       console.log(data['name']);
       pokeName.textContent = (data['name']);
