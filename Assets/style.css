@@ -342,6 +342,10 @@ body section{
     background-color: rgb(42, 117, 187,0.9);
 }
 
+#pokeRow {
+    display:flex;
+}
+
 
 
 
