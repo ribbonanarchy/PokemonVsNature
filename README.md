@@ -24,7 +24,7 @@ Open Weather API - <https://openweathermap.org/api> \
 
 # Screenshot:
 
-![Screencastify of deployed application](./README_Files/PokeWeather.gif)
+![Screencastify of deployed application](./README_Files/PokeWeather (1).gif)
 
 # Deployed Application:
 
