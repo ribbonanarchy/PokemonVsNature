@@ -599,11 +599,10 @@ body section{
 
 
 
-@media screen and (max-width: 809px) and (min-width:0px)  {
+@media screen and (max-width: 809px) and (min-width:485px)  {
     .clouds{
         margin-left: 1px;
         margin-top: 10px;
-        
     }
     .cloud{
         margin-left: 140px;
@@ -616,7 +615,6 @@ body section{
         font-size: 21px;
         padding-left: 9px;
         margin: 19px;
-        
     }
     .cloud2{
         margin-top: 2px;
@@ -657,7 +655,6 @@ body section{
     .fiveDayForecast{
         margin-left: 12px;
         top: 190px;
-        
     }
 
     #day0Card, #day1Card, #day2Card,
@@ -691,8 +688,6 @@ body section{
         top: 275px;
         margin-left:42px;
     }
-
-    
 
     .pokeCard {
         margin: 16px;
@@ -728,8 +723,95 @@ body section{
         box-shadow: 0 0 18px rgba(0, 0, 0, 2.75);
     }
 
-
 } 
+
+@media screen and (max-width: 484px) and (min-width:0px){
+    .cloud{
+        margin-left: 40px;
+        height: 68px;
+        width: 162px;
+        padding: 0px;
+        float: none;
+    }
+
+    .cloud p{
+        font-size: 18px;
+        padding-left: 10px;
+        margin: 9px;
+    }
+    .cloud2{
+        margin-top: 3px;
+        height: 45px;
+        width: 311px;
+        float: none;
+        padding: 33px;
+        margin-left: -88px;
+    }
+    .cloud2 p{
+        top: -22px;
+        font-size: 10px;
+    }
+    .cloud3{
+        margin-left: 12px;
+        width: 183px;
+        height: 58px;
+        float: none;
+        margin-top: -19px;
+        margin-bottom: 20px;
+    }
+
+    #wrap p{
+        font-size: 12px;
+        margin-top: 1px;
+    }
+    
+    #autocomplete-input{
+        width: 186px;
+        font-size: 11px;
+        height: 42px;
+        top: -10px;
+        
+    }
+
+    #city-form{ 
+       margin-top: -6px;
+    }
+
+    .searchButton{
+        height: 38px;
+        width: 38px;
+        float: none;
+        right: -125px;
+        bottom: 45px;
+    }
+
+    .fiveDayForecast{
+        margin-left: 12px;
+        top: 110px;
+    }
+
+    #day0Card, #day1Card, #day2Card,
+    #day3Card, #day4Card{
+        width: 138px;
+        height: 330px;
+        line-height: 1;
+        float: none;
+    }
+
+    .pokeCard {
+        margin: 21px;
+        margin-left: 59px;
+        top: -134px;
+        height:190px;
+        width: 190px;
+    }
+
+    #battleButton{
+        top: 350px;
+        left: 221px;
+    }
+
+}
 
 
 
