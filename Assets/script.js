@@ -551,20 +551,20 @@ function getOnePokemon(url) {
       // pokeCard.classList.add((dataFirstType)['type']['name']);
 
       //shows name of pokemon
-      console.log(data['name']);
-      pokeName.textContent = (data['name']);
+      // console.log(data['name']);
+      // pokeName.textContent = (data['name']);
 
-      var dataTypes = data['types'];
-      var dataFirstType = dataTypes[0];
-      //shows 1st type of pokemon i.e 'grass/water/poison'
-      console.log(dataFirstType['type']['name']);
-      pokeTypeOne.textContent = (dataFirstType)['type']['name'];
+      // var dataTypes = data['types'];
+      // var dataFirstType = dataTypes[0];
+      // //shows 1st type of pokemon i.e 'grass/water/poison'
+      // console.log(dataFirstType['type']['name']);
+      // pokeTypeOne.textContent = (dataFirstType)['type']['name'];
       
-      //images for pokemon
-      pokeFrontImage.src = data['sprites']['front_default'];
+      // //images for pokemon
+      // pokeFrontImage.src = data['sprites']['front_default'];
 
-      //display the color for the type of pokemon!!
-      pokeCard.classList.add((dataFirstType)['type']['name']);
+      // //display the color for the type of pokemon!!
+      // pokeCard.classList.add((dataFirstType)['type']['name']);
   })
 }
 //}
