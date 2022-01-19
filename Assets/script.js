@@ -118,7 +118,7 @@ var weatherTypes = [
 ];
 
 //console.log(pokemonTypes[4].pokemonArray);
-var pokeRow = document.getElementById('pokeRow')
+var pokeRow = document.getElementById('pokeRow');
 var pokeArray;
 var typeMasterArray = []; //hold all the pokemon affected by current weather
 var userPokeChoice = []; //pick 6 random from typeMasterArray
