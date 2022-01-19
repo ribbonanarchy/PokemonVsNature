@@ -504,39 +504,7 @@ function getOnePokemon(url) {
       console.log('hello this is the data function for urlSinglePoke');
       console.log(data);
 
-      var divParentContainer = document.createElement('div');
-      divParentContainer.classList.add('pokeCard', 'card')
-      var divScreenHeader = document.createElement('div');
-      divScreenHeader.classList.add('screen_header')
-      var pokeNameSpan = document.createElement('span');
-      pokeNameSpan.classList.add('poke-name')
-      pokeNameSpan.textContent=data['name']
-      divScreenHeader.appendChild(pokeNameSpan)
-      divParentContainer.appendChild(divScreenHeader)
-      // var pokeIdSpan = document.createElement('span')
-      // pokeIdSpan.classList.add('poke-id');
-      // pokeIdSpan.textContent=data['name']
-      // divScreenHeader.appendChild(pokeIdSpan);
-      var divStatsTypes = document.createElement('div')
-      divStatsTypes.classList.add('stats__types')
-      var pokeTypeOneSpan = document.createElement('span')
-      pokeTypeOneSpan.classList.add('poke-type-one');
-      var dataTypes = data['types'];
-      var dataFirstType = dataTypes[0];
-      pokeTypeOneSpan.textContent=dataFirstType['type']['name']
-      divStatsTypes.appendChild(pokeTypeOneSpan);
-      divParentContainer.appendChild(divStatsTypes);
-      var divScreenImage = document.createElement('div')
-      divScreenImage.classList.add('screen_image')
-      var pokeImage = document.createElement('img')
-      pokeImage.classList.add('poke-front-image')
-      pokeImage.alt='front image of pokemon'
-      pokeImage.src= data['sprites']['front_default']
-      divScreenImage.appendChild(pokeImage);
-      divParentContainer.appendChild(divScreenImage);
-      divParentContainer.classList.add(dataFirstType['type']['name']);
-      console.log(divParentContainer);
-      pokeRow.appendChild(divParentContainer);
+
       
       var divParentContainer = document.createElement('div');
       divParentContainer.classList.add('pokeCard', 'card')
