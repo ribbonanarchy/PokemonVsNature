@@ -6,6 +6,10 @@
 
 # Built Utilizing:
 
+Materialize v1 - <https://materializecss.com/> \
+PokeAPI - <https://pokeapi.co/> \
+Open Weather API - <https://openweathermap.org/api> \
+
 # Contributors:
 
 Robyn Arnecke - <https://github.com/ribbonanarchy> \
@@ -20,7 +24,3 @@ Randy King Jr. - <https://github.com/rkingjr> \
 # Deployed Application:
 
 https://ribbonanarchy.github.io/PokemonVsNature/
-
-Pokemon API: https://pokeapi.co/
-
-Weather API: https://openweathermap.org/api
