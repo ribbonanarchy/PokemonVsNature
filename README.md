@@ -8,6 +8,8 @@
 
 # Deployed Application
 
+![Screencastify of deployed application](./Assets/images/PokeWeather.gif)
+
 Pokemon API: https://pokeapi.co/
 
 Weather API: https://openweathermap.org/api
