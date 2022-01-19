@@ -118,6 +118,8 @@ var weatherTypes = [
 ];
 
 //console.log(pokemonTypes[4].pokemonArray);
+
+
 var pokeRow = document.getElementById('pokeRow');
 var pokeArray;
 var typeMasterArray = []; //hold all the pokemon affected by current weather
@@ -298,12 +300,14 @@ $('#battleButton').removeClass('hide');
 //console.log(this,'this is clicked');
 })
 
+
 // $('#battleButton').click(function(){
 // $(document.location.replace(battlePage))
 // })
 
 function battleTab() {
   window.open("battle.html", "_blank");
+
 }
 
 function weatherToPokemon (day0Weather, day1Weather, day2Weather, day3Weather, day4Weather) {
@@ -375,7 +379,9 @@ function getTypeAPI(i, currentWeather) {
       return userPokeChoice;
   })
   .then(function(userPokeChoice) {
+
     pokeRow.innerHTML='';
+
 
       for(var i=0; i<userPokeChoice.length; i++) {
           getOnePokemon(userPokeChoice[i].pokemon.url);
@@ -479,7 +485,7 @@ var idOrName = 150//document.getElementById('autocomplete-input').value
 
 //DOM OBJECTS
 var pokeCard = document.querySelector('.pokeCard');
-var pokeName = document.querySelector('.poke-name');
+var pokeName = document.querySelector('.poke-name',);
 var pokeId = document.querySelector('.poke-id');
 var pokeFrontImage = document.querySelector('.poke-front-image');
 var pokeTypeOne = document.querySelector('.poke-type-one');
@@ -497,6 +503,40 @@ function getOnePokemon(url) {
   .then( data => {
       console.log('hello this is the data function for urlSinglePoke');
       console.log(data);
+
+      var divParentContainer = document.createElement('div');
+      divParentContainer.classList.add('pokeCard', 'card')
+      var divScreenHeader = document.createElement('div');
+      divScreenHeader.classList.add('screen_header')
+      var pokeNameSpan = document.createElement('span');
+      pokeNameSpan.classList.add('poke-name')
+      pokeNameSpan.textContent=data['name']
+      divScreenHeader.appendChild(pokeNameSpan)
+      divParentContainer.appendChild(divScreenHeader)
+      // var pokeIdSpan = document.createElement('span')
+      // pokeIdSpan.classList.add('poke-id');
+      // pokeIdSpan.textContent=data['name']
+      // divScreenHeader.appendChild(pokeIdSpan);
+      var divStatsTypes = document.createElement('div')
+      divStatsTypes.classList.add('stats__types')
+      var pokeTypeOneSpan = document.createElement('span')
+      pokeTypeOneSpan.classList.add('poke-type-one');
+      var dataTypes = data['types'];
+      var dataFirstType = dataTypes[0];
+      pokeTypeOneSpan.textContent=dataFirstType['type']['name']
+      divStatsTypes.appendChild(pokeTypeOneSpan);
+      divParentContainer.appendChild(divStatsTypes);
+      var divScreenImage = document.createElement('div')
+      divScreenImage.classList.add('screen_image')
+      var pokeImage = document.createElement('img')
+      pokeImage.classList.add('poke-front-image')
+      pokeImage.alt='front image of pokemon'
+      pokeImage.src= data['sprites']['front_default']
+      divScreenImage.appendChild(pokeImage);
+      divParentContainer.appendChild(divScreenImage);
+      divParentContainer.classList.add(dataFirstType['type']['name']);
+      console.log(divParentContainer);
+      pokeRow.appendChild(divParentContainer);
       
       var divParentContainer = document.createElement('div');
       divParentContainer.classList.add('pokeCard', 'card')

@@ -201,13 +201,7 @@ body section{
     text-shadow: 3px 3px rgb(42, 117, 187,0.8);
 }
 
-.pokeCard {
-    box-shadow: inset 0 0 3px 3px rgba(0,0,0,.3);
-    border-radius: 15px;
-    height: 100%;
-    width: 200px;
-    padding: 15px;
-  }
+
   .hide {
     display: none;
   }
@@ -285,36 +279,37 @@ body section{
 
 .pokemon{
     position: absolute; 
-    margin-left: 185px;
+    margin-left: 140px;
     vertical-align: top;
     margin-top: 660px;
+    
+}
+
+.pokeCard {
+    margin: 5px;
+    height:220px;
+    width: 220px;
+    padding: 3px;
+    border-radius: 120px;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+    position:relative;
+
+}
+
+.pokeCard:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 2.95);
+}
+
+#pokeRow {
+    display: flex;
     flex-wrap: wrap;
 }
 
-#poke0,#poke1,#poke2,#poke3,#poke4{
-    position: relative;
-    float: left;
-    height:210px;
-    width: 210px;
-    margin-right: 10px;
-    padding: 3px;
-    border-radius: 120px;
+.screen_header{
+    margin-top: 9px;
 }
 
-#poke5{
-    position: relative;
-    float: right;
-    height:210px;
-    width: 210px;
-    padding: 3px;
-    border-radius: 120px;
-}
-
-#poke0:hover,#poke1:hover,#poke2:hover, 
-#poke3:hover,#poke4:hover,#poke5:hover{
-    transform:scale(1.10);
-    box-shadow: 0 0 18px rgba(0, 0, 0, 2);
-}
 
 .battle{
     position: absolute;
@@ -342,9 +337,25 @@ body section{
     background-color: rgb(42, 117, 187,0.9);
 }
 
-#pokeRow {
-    display:flex;
+
+.poke-front-image {
+    height: 180px ;
+    width: 180px ;
+    
 }
+
+.poke-name{
+    font-size:14px;
+}
+
+/* .poke-id{
+    font-size: 11px;
+} */
+
+
+
+
+
 
 
 
@@ -448,19 +459,35 @@ body section{
 
     .pokemon{
         margin-left: 5px;
-        
     }
 
-    #poke0,#poke1,#poke2,#poke3,#poke4,#poke5{
+    .pokeCard {
+        margin: 5px;
+        height:190px;
+        width: 190px;
+        padding: 3px;
+        border-radius: 120px;
+        box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+        position:relative;
+    }
+
+    .poke-front-image {
+        height: 160px ;
+        width: 160px ;
+    }
+
+    /* #poke0,#poke1,#poke2,#poke3,#poke4,#poke5{
     margin-left: 5px;
     height:160px;
     width: 160px;
     float: left;
-    }
+    } */
 
     #battleButton{
-    /* top: 545px; */
-    left: 479px;
+    top: 337px;
+    left: 1050px;
+    height: 165px;
+    width: 165px;
     }
 
 }
@@ -543,20 +570,27 @@ body section{
         height: 50px;
     }
 
-    #poke0,#poke1,#poke2,#poke3,#poke4,#poke5{
-        height:125px;
-        width: 125px;
-        padding: 5px;
-        border-radius: 120px;
-    }
-
-   .pokemon{
+    .pokemon{
         top:113px;
         margin-left: 5px;
-
     }
 
-    #battleButton{
+    .pokeCard {
+        margin: 5px;
+        height:170px;
+        width: 170px;
+        padding: 3px;
+        border-radius: 120px;
+        box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+        position:relative;
+    }
+
+    .poke-front-image {
+        height: 140px ;
+        width: 140px ;
+    }
+
+   #battleButton{
         left: 20px;
         top: 220px;
     }
@@ -655,18 +689,24 @@ body section{
 
     .pokemon{
         top: 275px;
-        margin-left:28px;
+        margin-left:42px;
     }
 
-    #poke0,#poke1,#poke2,#poke3,#poke4,#poke5{
-        height:125px;
-        width: 125px;
-        padding: 5px;
+    
+
+    .pokeCard {
+        margin: 16px;
+        height:155px;
+        width: 155px;
+        padding: 4px;
         border-radius: 120px;
+        box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+        position:relative;
     }
 
-    #poke5{
-        right: 32px;
+    .poke-front-image {
+        height: 123px ;
+        width: 123px ;
     }
 
     #battleButton{
