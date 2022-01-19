@@ -1,6 +1,12 @@
-# PokemonVsNature
+## Project 1: PokeWeather Webpage
 
-Hello! Party people.
+**Version 1.0**
+
+# Description
+
+# Screenshot
+
+# Deployed Application
 
 Pokemon API: https://pokeapi.co/
 

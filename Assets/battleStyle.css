@@ -2,7 +2,10 @@ body {
     background-image: url("./images/arena.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
+    min-height: 100vh;
 }
+
+/* Add media query for body at smaller screen sizes to include object-fit and smaller font sizes */
 
 @font-face {
     font-family: pokeFont;
