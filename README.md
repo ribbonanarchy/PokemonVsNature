@@ -4,6 +4,11 @@
 
 # Description:
 
+# Original Wireframe:
+
+![Slide 1 containing index.html layout](./README_Files/pokemonvsnaturewireframe1.pptx.jpg) \
+![Slide 2 containing battle.html layout](./README_Files/pokemonvsnaturewireframe1.pptx (1).jpg) \
+
 # Built Utilizing:
 
 Materialize v1 - <https://materializecss.com/> \
