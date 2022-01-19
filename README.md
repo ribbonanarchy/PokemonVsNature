@@ -8,9 +8,9 @@ In this application we wanted to have a fun way for users to get the current wea
 
 # User Story:
 
-AS a Pokémon Gamer
-I WANT to see Pokémon recommendations based on the weather
-SO THAT I can understand how weather affects my Pokémon
+AS a Pokémon Gamer \
+I WANT to see Pokémon recommendations based on the weather \
+SO THAT I can understand how weather affects my Pokémon \
 
 # Original Wireframe:
 
