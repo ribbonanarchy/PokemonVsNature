@@ -8,10 +8,10 @@
 
 # Contributors:
 
-Robyn Arnecke - https://github.com/ribbonanarchy
-Leland Byrd - https://github.com/Byrdbass
-Benjamin Gomez - https://github.com/bennygo3
-Randy King Jr. - https://github.com/rkingjr
+Robyn Arnecke - <https://github.com/ribbonanarchy> \
+Leland Byrd - <https://github.com/Byrdbass> \
+Benjamin Gomez - <https://github.com/bennygo3> \
+Randy King Jr. - <https://github.com/rkingjr> \
 
 # Screenshot:
 
